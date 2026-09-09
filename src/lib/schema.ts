@@ -111,6 +111,27 @@ export function articleSchema(post: BlogPost, url: string) {
     mainEntityOfPage: url,
     keywords: post.keywords.join(', '),
     articleSection: post.category,
-    inLanguage: 'en'
+    inLanguage: 'en',
+    // Voice-assistant / AI-overview read-aloud target.
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', '.prose-mountiva > p:first-of-type']
+    }
+  };
+}
+
+/** Read-aloud hint for answer engines and assistants (AEO). */
+export function speakableWebPage(url: string, name: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': url,
+    url,
+    name,
+    isPartOf: { '@id': `${site.url}/#website` },
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', 'h2', 'details p']
+    }
   };
 }

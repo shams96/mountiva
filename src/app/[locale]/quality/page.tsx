@@ -3,8 +3,9 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 
 import { buildMetadata } from '@/lib/seo';
-import { breadcrumbSchema, faqSchema } from '@/lib/schema';
+import { breadcrumbSchema, faqSchema, speakableWebPage } from '@/lib/schema';
 import { site } from '@/lib/site';
+import { routing } from '@/i18n/routing';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { PageHero } from '@/components/sections/PageHero';
 import { Section } from '@/components/ui/Section';
@@ -34,6 +35,7 @@ export default async function QualityPage({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: 'quality' });
   const faqItems = t.raw('faq') as { question: string; answer: string }[];
+  const pageUrl = `${site.url}${locale === routing.defaultLocale ? '' : `/${locale}`}/quality`;
 
   return (
     <>
@@ -45,6 +47,7 @@ export default async function QualityPage({ params }: Props) {
         ])}
       />
       <JsonLd id="ld-faq-quality" data={faqSchema(faqItems)} />
+      <JsonLd id="ld-speakable-quality" data={speakableWebPage(pageUrl, t('hero.heading'))} />
       <QualityContent />
       <ClosingCta />
     </>

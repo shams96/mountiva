@@ -35,6 +35,10 @@
     text-wrap: balance;
   }
 
+  p {
+    text-wrap: pretty;
+  }
+
   /* Display type is serif wherever it lands, not only on headings. */
   [class*='text-display-'],
   .text-title {
@@ -103,5 +107,29 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Data saver: drop the decorative gradient washes and any background media. */
+@media (prefers-reduced-data: reduce) {
+  [data-hero-bg],
+  .hero-wash {
+    display: none !important;
+  }
+}
+
+/* Smooth cross-document navigation where the browser supports it (no JS). */
+@view-transition {
+  navigation: auto;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.28s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
   }
 }

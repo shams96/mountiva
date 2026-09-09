@@ -15,6 +15,7 @@ export function Hero() {
       {media.heroBackground.enabled ? (
         <>
           <Image
+            data-hero-bg
             src={media.heroBackground.src}
             alt={media.heroBackground.alt}
             fill
@@ -28,7 +29,7 @@ export function Hero() {
         /* Soft Northern horizon wash — stands in for a landscape until one is set */
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 h-[60%] bg-gradient-to-b from-glacier-pale/70 via-northern-pale/30 to-transparent"
+          className="hero-wash pointer-events-none absolute inset-x-0 top-0 h-[60%] bg-gradient-to-b from-glacier-pale/70 via-northern-pale/30 to-transparent"
         />
       )}
 
