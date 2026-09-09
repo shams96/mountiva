@@ -76,7 +76,7 @@ function SourceTeaser() {
   return (
     <Section tone="paper">
       <SectionHeading eyebrow={t('eyebrow')} title={t('heading')} body={t('body')} />
-      <div className="mt-14 grid gap-px overflow-hidden rounded-sm border border-stone bg-stone sm:grid-cols-3">
+      <div className="mt-10 grid gap-px overflow-hidden rounded-sm border border-stone bg-stone sm:grid-cols-3">
         {points.map((p, i) => (
           <Reveal key={p.title} delay={i * 0.06} className="bg-surface p-7">
             <span className="eyebrow">0{i + 1}</span>
@@ -184,7 +184,7 @@ function InsightsPreview({ posts }: { posts: ReturnType<typeof getAllPosts> }) {
           {t('cta')} →
         </ButtonLink>
       </div>
-      <div className="mt-12 grid gap-10 md:grid-cols-3">
+      <div className="mt-10 grid gap-10 md:grid-cols-3">
         {posts.map((post, i) => (
           <Reveal key={post.slug} delay={i * 0.06} as="div">
             <PostCard post={post} />

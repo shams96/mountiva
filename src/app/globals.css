@@ -35,6 +35,12 @@
     text-wrap: balance;
   }
 
+  /* Display type is serif wherever it lands, not only on headings. */
+  [class*='text-display-'],
+  .text-title {
+    @apply font-serif;
+  }
+
   ::selection {
     @apply bg-signal text-surface;
   }

@@ -8,9 +8,8 @@ import { articleSchema, breadcrumbSchema } from '@/lib/schema';
 import { getAllPosts, getPost } from '@/lib/blog';
 import { routing } from '@/i18n/routing';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
-import { Eyebrow } from '@/components/ui/Eyebrow';
+import { PageHero } from '@/components/sections/PageHero';
 import { ButtonLink } from '@/components/ui/Button';
 import { ArticleBody } from '@/components/blog/ArticleBody';
 import { MountainMotif } from '@/components/brand/MountainMotif';
@@ -64,28 +63,24 @@ export default async function BlogPostPage({ params }: Props) {
       />
 
       <article>
-        <header className="border-b border-stone bg-paper">
-          <Container className="py-16 md:py-24">
-            <div className="max-w-3xl">
-              <Eyebrow>{post.category}</Eyebrow>
-              <h1 className="mt-6 text-display-lg text-ink">{post.title}</h1>
-              <p className="mt-5 max-w-prose text-lede leading-relaxed text-slate">
-                {post.excerpt}
-              </p>
-              <div className="mt-6 flex items-center gap-3 text-xs text-ash">
-                <time dateTime={post.publishedAt}>
-                  {format.dateTime(new Date(post.publishedAt), {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                  })}
-                </time>
-                <span aria-hidden>·</span>
-                <span>{t('readingTime', { minutes: post.readingMinutes })}</span>
-              </div>
-            </div>
-          </Container>
-        </header>
+        <PageHero
+          eyebrow={post.category}
+          heading={post.title}
+          lede={post.excerpt}
+          meta={
+            <>
+              <time dateTime={post.publishedAt}>
+                {format.dateTime(new Date(post.publishedAt), {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+                })}
+              </time>
+              <span aria-hidden>·</span>
+              <span>{t('readingTime', { minutes: post.readingMinutes })}</span>
+            </>
+          }
+        />
 
         <Section tone="surface">
           <ArticleBody blocks={post.body} />

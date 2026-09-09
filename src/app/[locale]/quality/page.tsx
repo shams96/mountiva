@@ -8,6 +8,7 @@ import { site } from '@/lib/site';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { PageHero } from '@/components/sections/PageHero';
 import { Section } from '@/components/ui/Section';
+import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Reveal } from '@/components/ui/Reveal';
 import { CtaBanner } from '@/components/sections/CtaBanner';
 
@@ -61,7 +62,7 @@ function QualityContent() {
       <PageHero eyebrow={t('hero.eyebrow')} heading={t('hero.heading')} lede={t('hero.lede')} />
 
       <Section tone="surface">
-        <h2 className="text-display-md text-ink">{t('practiceHeading')}</h2>
+        <SectionHeading title={t('practiceHeading')} />
         <div className="mt-10 grid gap-px overflow-hidden rounded-sm border border-stone bg-stone sm:grid-cols-2">
           {practice.map((p, i) => (
             <Reveal key={p.title} delay={i * 0.05} className="bg-surface p-7">
@@ -73,12 +74,12 @@ function QualityContent() {
       </Section>
 
       <Section tone="paper">
-        <div className="grid gap-10 lg:grid-cols-[16rem_1fr] lg:gap-16">
-          <h2 className="text-display-md text-ink">{t('reportsHeading')}</h2>
+        <SectionHeading title={t('reportsHeading')} />
+        <div className="mt-10">
           <div>
             <p className="max-w-prose text-lede leading-relaxed text-slate">{t('reportsIntro')}</p>
             {reports.length > 0 ? (
-              <ul className="mt-8 divide-y divide-stone border-y border-stone">
+              <ul className="mt-10 divide-y divide-stone border-y border-stone">
                 {reports.map((r) => (
                   <li key={r.file} className="flex items-center justify-between gap-4 py-4">
                     <span>
@@ -97,7 +98,7 @@ function QualityContent() {
                 ))}
               </ul>
             ) : (
-              <p className="mt-8 rounded-sm border border-dashed border-stone bg-mist/50 p-6 text-sm text-slate">
+              <p className="mt-10 rounded-sm border border-dashed border-stone bg-mist/50 p-6 text-sm text-slate">
                 {t('reportsPending')}{' '}
                 <a href={`mailto:${site.contact.email}`} className="link-quiet">
                   {site.contact.email}
@@ -109,11 +110,11 @@ function QualityContent() {
       </Section>
 
       <Section tone="mist">
-        <div className="grid gap-10 lg:grid-cols-[16rem_1fr] lg:gap-16">
-          <h2 className="text-display-md text-ink">{t('certsHeading')}</h2>
+        <SectionHeading title={t('certsHeading')} />
+        <div className="mt-10">
           <div>
             <p className="max-w-prose text-lede leading-relaxed text-slate">{t('certsIntro')}</p>
-            <dl className="mt-8 grid gap-6 sm:grid-cols-2">
+            <dl className="mt-10 grid gap-6 sm:grid-cols-2">
               {certs.map((c) => (
                 <div key={c.name} className="border-t border-ink pt-4">
                   <dt className="text-sm font-medium text-ink">{c.name}</dt>
@@ -126,7 +127,7 @@ function QualityContent() {
       </Section>
 
       <Section tone="surface">
-        <h2 className="text-display-md text-ink">{t('faqHeading')}</h2>
+        <SectionHeading title={t('faqHeading')} />
         <div className="mt-10 divide-y divide-stone border-y border-stone">
           {faq.map((item) => (
             <details key={item.question} className="group py-5">

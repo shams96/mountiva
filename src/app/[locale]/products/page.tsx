@@ -8,6 +8,7 @@ import { products, privateLabel } from '@/lib/products';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { PageHero } from '@/components/sections/PageHero';
 import { Section } from '@/components/ui/Section';
+import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Reveal } from '@/components/ui/Reveal';
 import { CtaBanner } from '@/components/sections/CtaBanner';
 
@@ -53,7 +54,7 @@ function ProductsContent() {
       <PageHero eyebrow={t('hero.eyebrow')} heading={t('hero.heading')} lede={t('hero.lede')} />
 
       <Section tone="surface">
-        <h2 className="text-display-md text-ink">{t('tableHeading')}</h2>
+        <SectionHeading title={t('tableHeading')} />
 
         {/* Table on md+, stacked cards on mobile */}
         <div className="mt-10 hidden overflow-x-auto md:block">
@@ -103,28 +104,23 @@ function ProductsContent() {
       </Section>
 
       <Section tone="night">
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <h2 className="text-display-md text-paper">{t('privateLabelHeading')}</h2>
-            <p className="mt-4 max-w-measure text-lede leading-relaxed text-paper/75">
-              {t('privateLabelBody')}
-            </p>
-            <dl className="mt-8 space-y-4 text-sm">
-              <div>
-                <dt className="eyebrow text-paper/60">{t('privateLabelMeta.volume')}</dt>
-                <dd className="mt-1 text-paper">{privateLabel.minAnnualVolume}</dd>
-              </div>
-              <div>
-                <dt className="eyebrow text-paper/60">{t('privateLabelMeta.leadTime')}</dt>
-                <dd className="mt-1 text-paper">{privateLabel.leadTimeWeeks}</dd>
-              </div>
-            </dl>
-          </div>
+        <SectionHeading tone="paper" title={t('privateLabelHeading')} body={t('privateLabelBody')} />
+        <div className="mt-10 grid gap-10 lg:grid-cols-2 lg:gap-16">
+          <dl className="space-y-4 text-sm">
+            <div>
+              <dt className="eyebrow text-paper/60">{t('privateLabelMeta.volume')}</dt>
+              <dd className="mt-1 text-paper">{privateLabel.minAnnualVolume}</dd>
+            </div>
+            <div>
+              <dt className="eyebrow text-paper/60">{t('privateLabelMeta.leadTime')}</dt>
+              <dd className="mt-1 text-paper">{privateLabel.leadTimeWeeks}</dd>
+            </div>
+          </dl>
           <Reveal>
             <ul className="space-y-3 text-sm text-paper/80">
               {privateLabel.options.map((o) => (
                 <li key={o} className="flex gap-3 border-b border-paper/15 pb-3">
-                  <span aria-hidden className="text-northern-soft">
+                  <span aria-hidden className="text-signal-soft">
                     —
                   </span>
                   {o}

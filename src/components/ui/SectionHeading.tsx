@@ -13,6 +13,7 @@ type SectionHeadingProps = {
   as?: 'h1' | 'h2';
 };
 
+/** The one section-heading treatment used across every page. */
 export function SectionHeading({
   eyebrow,
   title,

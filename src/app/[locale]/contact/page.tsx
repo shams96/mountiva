@@ -8,6 +8,7 @@ import { site } from '@/lib/site';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { PageHero } from '@/components/sections/PageHero';
 import { Section } from '@/components/ui/Section';
+import { SectionHeading } from '@/components/ui/SectionHeading';
 import { CtaBanner } from '@/components/sections/CtaBanner';
 import { ContactForm } from '@/components/contact/ContactForm';
 
@@ -51,7 +52,8 @@ function ContactContent() {
       <PageHero eyebrow={t('hero.eyebrow')} heading={t('hero.heading')} lede={t('hero.lede')} />
 
       <Section tone="surface">
-        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+        <SectionHeading title={t('formHeading')} />
+        <div className="mt-10 grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <div className="flex flex-col gap-8">
             <ContactBlock
               heading={t('wholesaleHeading')}
@@ -84,10 +86,7 @@ function ContactContent() {
           </div>
 
           <div className="rounded-sm border border-stone bg-surface p-6 shadow-card md:p-9">
-            <h2 className="text-title text-ink">{t('formHeading')}</h2>
-            <div className="mt-6">
-              <ContactForm />
-            </div>
+            <ContactForm />
           </div>
         </div>
       </Section>
@@ -104,7 +103,7 @@ function ContactBlock({
 }) {
   return (
     <div className="border-t border-ink pt-5">
-      <h2 className="eyebrow">{heading}</h2>
+      <h3 className="eyebrow">{heading}</h3>
       <dl className="mt-4 space-y-3">
         {rows.map((r) => (
           <div key={r.label} className="flex flex-col gap-0.5">

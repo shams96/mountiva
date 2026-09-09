@@ -4,13 +4,14 @@ import { useTranslations } from 'next-intl';
 
 import { buildMetadata } from '@/lib/seo';
 import { breadcrumbSchema, faqSchema } from '@/lib/schema';
+import { site } from '@/lib/site';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { PageHero } from '@/components/sections/PageHero';
 import { Section } from '@/components/ui/Section';
+import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Reveal } from '@/components/ui/Reveal';
-import { ButtonLink } from '@/components/ui/Button';
+import { CtaBanner } from '@/components/sections/CtaBanner';
 import { WholesaleForm } from '@/components/wholesale/WholesaleForm';
-import { site } from '@/lib/site';
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -43,6 +44,7 @@ export default async function WholesalePage({ params }: Props) {
       />
       <JsonLd id="ld-faq-wholesale" data={faqSchema(faqItems)} />
       <WholesaleContent />
+      <ClosingCta />
     </>
   );
 }
@@ -57,11 +59,11 @@ function WholesaleContent() {
       <PageHero eyebrow={t('hero.eyebrow')} heading={t('hero.heading')} lede={t('hero.lede')} />
 
       <Section tone="surface">
-        <h2 className="text-display-md text-ink">{t('howHeading')}</h2>
-        <ol className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <SectionHeading title={t('howHeading')} />
+        <ol className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {how.map((s, i) => (
             <Reveal key={s.step} delay={i * 0.05} as="li">
-              <span className="font-serif text-2xl text-northern">{s.step}</span>
+              <span className="font-serif text-2xl text-signal">{s.step}</span>
               <h3 className="mt-3 text-title text-ink">{s.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-slate">{s.text}</p>
             </Reveal>
@@ -70,7 +72,7 @@ function WholesaleContent() {
       </Section>
 
       <Section tone="mist">
-        <h2 className="text-display-md text-ink">{t('logisticsHeading')}</h2>
+        <SectionHeading title={t('logisticsHeading')} />
         <div className="mt-10 grid gap-px overflow-hidden rounded-sm border border-stone bg-stone sm:grid-cols-2">
           {logistics.map((l, i) => (
             <Reveal key={l.title} delay={i * 0.05} className="bg-surface p-7">
@@ -82,36 +84,23 @@ function WholesaleContent() {
       </Section>
 
       <Section tone="paper" id="request">
-        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-          <div>
-            <h2 className="text-display-md text-ink">{t('formHeading')}</h2>
-            <p className="mt-4 max-w-measure text-sm leading-relaxed text-slate">
-              {t('formIntro')}
-            </p>
-          </div>
-          <div className="rounded-sm border border-stone bg-surface p-6 shadow-card md:p-9">
-            <WholesaleForm />
-          </div>
+        <SectionHeading title={t('formHeading')} body={t('formIntro')} />
+        <div className="mt-10 max-w-3xl rounded-sm border border-stone bg-surface p-6 shadow-card md:p-9">
+          <WholesaleForm />
         </div>
       </Section>
-
-      <Section tone="night">
-        <Reveal className="mx-auto flex max-w-2xl flex-col items-center text-center">
-          <h2 className="text-display-md text-paper">{t('closingCta.heading')}</h2>
-          <p className="mt-3 text-lede text-paper/75">{t('closingCta.body')}</p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href="/contact" variant="inverse" size="lg">
-              {t('closingCta.cta')}
-            </ButtonLink>
-            <a
-              href={`tel:${site.contact.phoneHref}`}
-              className="inline-flex h-13 min-h-[3.25rem] items-center justify-center rounded-sm border border-paper/25 px-7 text-[0.95rem] font-medium text-paper no-underline transition-colors hover:bg-paper/10"
-            >
-              {site.contact.phoneDisplay}
-            </a>
-          </div>
-        </Reveal>
-      </Section>
     </>
+  );
+}
+
+function ClosingCta() {
+  const t = useTranslations('wholesale.closingCta');
+  return (
+    <CtaBanner
+      heading={t('heading')}
+      body={t('body')}
+      primary={{ label: t('cta'), href: '/contact' }}
+      tertiary={{ label: site.contact.phoneDisplay, href: `tel:${site.contact.phoneHref}`, external: true }}
+    />
   );
 }

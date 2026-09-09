@@ -7,6 +7,7 @@ import { breadcrumbSchema } from '@/lib/schema';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { PageHero } from '@/components/sections/PageHero';
 import { Section } from '@/components/ui/Section';
+import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Reveal } from '@/components/ui/Reveal';
 import { CtaBanner } from '@/components/sections/CtaBanner';
 import { MountainMotif } from '@/components/brand/MountainMotif';
@@ -60,36 +61,29 @@ function StoryContent() {
       <PageHero eyebrow={t('hero.eyebrow')} heading={t('hero.heading')} lede={t('hero.lede')} />
 
       <Section tone="surface">
-        <div className="grid gap-10 lg:grid-cols-[16rem_1fr] lg:gap-16">
-          <h2 className="text-display-md text-ink">{t('philosophyHeading')}</h2>
-          <Reveal className="prose-mountiva">
-            {philosophy.map((line, i) => (
-              <p key={i} className={i === 1 ? 'font-serif text-title text-ink' : undefined}>
-                {line}
-              </p>
-            ))}
-          </Reveal>
-        </div>
+        <SectionHeading title={t('philosophyHeading')} />
+        <Reveal className="prose-mountiva mt-10">
+          {philosophy.map((line, i) => (
+            <p key={i} className={i === 1 ? 'font-serif text-title text-ink' : undefined}>
+              {line}
+            </p>
+          ))}
+        </Reveal>
       </Section>
 
       <Section tone="paper">
-        <div className="grid gap-10 lg:grid-cols-[16rem_1fr] lg:gap-16">
-          <div>
-            <h2 className="text-display-md text-ink">{t('storyHeading')}</h2>
-            <MountainMotif className="mt-6 hidden h-10 w-auto text-stone lg:block" />
-          </div>
-          <Reveal className="prose-mountiva">
-            {story.map((line, i) => (
-              <p key={i}>{line}</p>
-            ))}
-          </Reveal>
-        </div>
+        <SectionHeading title={t('storyHeading')} />
+        <Reveal className="prose-mountiva mt-10">
+          {story.map((line, i) => (
+            <p key={i}>{line}</p>
+          ))}
+        </Reveal>
+        <MountainMotif className="mt-12 hidden h-8 w-auto text-stone lg:block" />
       </Section>
 
       <Section tone="night">
-        <div className="grid gap-10 lg:grid-cols-[16rem_1fr] lg:gap-16">
-          <h2 className="text-display-md text-paper">{t('voiceHeading')}</h2>
-          <div className="flex flex-col gap-10">
+        <SectionHeading tone="paper" title={t('voiceHeading')} />
+        <div className="mt-10 flex flex-col gap-10">
             <Reveal>
               <p className="max-w-prose font-serif text-title text-paper">{voice.line}</p>
             </Reveal>
@@ -122,7 +116,6 @@ function StoryContent() {
               </Reveal>
             </div>
           </div>
-        </div>
       </Section>
     </>
   );

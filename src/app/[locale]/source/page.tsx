@@ -7,6 +7,7 @@ import { breadcrumbSchema } from '@/lib/schema';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { PageHero } from '@/components/sections/PageHero';
 import { Section } from '@/components/ui/Section';
+import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Reveal } from '@/components/ui/Reveal';
 import { CtaBanner } from '@/components/sections/CtaBanner';
 
@@ -52,11 +53,11 @@ function SourceContent() {
       <PageHero eyebrow={t('hero.eyebrow')} heading={t('hero.heading')} lede={t('hero.lede')} />
 
       <Section tone="surface">
-        <h2 className="text-display-md text-ink">{t('journeyHeading')}</h2>
-        <ol className="mt-12 grid gap-px overflow-hidden rounded-sm border border-stone bg-stone md:grid-cols-2">
+        <SectionHeading title={t('journeyHeading')} />
+        <ol className="mt-10 grid gap-px overflow-hidden rounded-sm border border-stone bg-stone md:grid-cols-2">
           {journey.map((j, i) => (
             <Reveal key={j.step} delay={i * 0.05} as="li" className="bg-surface p-8">
-              <span className="font-serif text-2xl text-northern">{j.step}</span>
+              <span className="font-serif text-2xl text-signal">{j.step}</span>
               <h3 className="mt-3 text-title text-ink">{j.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-slate">{j.text}</p>
             </Reveal>
@@ -65,25 +66,23 @@ function SourceContent() {
       </Section>
 
       <Section tone="paper">
-        <div className="grid gap-10 lg:grid-cols-[16rem_1fr] lg:gap-16">
-          <h2 className="text-display-md text-ink">{t('stewardshipHeading')}</h2>
-          <Reveal className="prose-mountiva">
-            <ul>
-              {stewardship.map((s, i) => (
-                <li key={i}>{s}</li>
-              ))}
-            </ul>
-          </Reveal>
-        </div>
+        <SectionHeading title={t('stewardshipHeading')} />
+        <Reveal className="prose-mountiva mt-10">
+          <ul>
+            {stewardship.map((s, i) => (
+              <li key={i}>{s}</li>
+            ))}
+          </ul>
+        </Reveal>
       </Section>
 
       <Section tone="mist">
-        <div className="mx-auto max-w-prose text-center">
-          <Reveal>
-            <h2 className="text-display-md text-ink">{t('transparencyHeading')}</h2>
-            <p className="mt-5 text-lede leading-relaxed text-slate">{t('transparency')}</p>
-          </Reveal>
-        </div>
+        <SectionHeading
+          align="center"
+          title={t('transparencyHeading')}
+          body={t('transparency')}
+          className="mx-auto"
+        />
       </Section>
     </>
   );
