@@ -1,0 +1,398 @@
+{
+  "meta": {
+    "home": {
+      "title": "Mountiva",
+      "description": "Premium wholesale natural mineral water from the deep aquifers of Northern Pakistan. We do not sell mountain fairy tales from Europe. Purity you can trust.",
+      "keywords": ["wholesale mineral water Pakistan", "premium natural water Northern Pakistan", "bulk water supplier hotels restaurants", "private label water Pakistan", "Mountiva"]
+    },
+    "story": {
+      "title": "Our Story",
+      "description": "Civilisational continuity, not nostalgia. Mountiva draws from the same land that taught the world how to live with water 5,000 years ago — the deep aquifers of Northern Pakistan.",
+      "keywords": ["Mountiva story", "Indus Valley water", "civilisational continuity", "Northern Pakistan water philosophy"]
+    },
+    "source": {
+      "title": "Our Source",
+      "description": "Rain and snowmelt descend for years through stone, gravel and alluvial earth. Mountiva draws from protected deep aquifers in Northern Pakistan — filtered by time and geology.",
+      "keywords": ["natural mineral water source", "aquifer Northern Pakistan", "groundwater filtration", "mineral water origin"]
+    },
+    "products": {
+      "title": "Products & Packaging",
+      "description": "Mountiva wholesale range: still and sparkling, 330 ml glass to 19 L returnable, with private-label options for hotels, restaurants, corporates and distributors.",
+      "keywords": ["wholesale water sizes", "bulk mineral water packaging", "private label bottled water", "HORECA water supply Pakistan"]
+    },
+    "wholesale": {
+      "title": "Wholesale",
+      "description": "Request bulk pricing for Mountiva natural mineral water. MOQs, pallet configurations, nationwide logistics and private label — built for hotels, restaurants, corporates and institutions.",
+      "keywords": ["request wholesale water quote", "bulk water pricing Pakistan", "mineral water distributor", "corporate water supply"]
+    },
+    "quality": {
+      "title": "Quality & Trust",
+      "description": "Purity you can trust is a documented promise. Read Mountiva lab reports, certifications and batch-level quality practice.",
+      "keywords": ["water lab report", "mineral water certification Pakistan", "PSQCA water", "water quality analysis"]
+    },
+    "blog": {
+      "title": "Insights",
+      "description": "Perspective on water, origin, quality and wholesale supply from Mountiva — Northern Pakistan's premium natural mineral water.",
+      "keywords": ["water industry insights Pakistan", "mineral water blog", "wholesale water guidance"]
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Talk to Mountiva about wholesale supply, private label or partnership. Based in Pakistan, serving nationwide and GCC export enquiries.",
+      "keywords": ["contact Mountiva", "wholesale water enquiry Pakistan", "bottled water supplier contact"]
+    }
+  },
+  "nav": {
+    "story": "Our Story",
+    "source": "Our Source",
+    "products": "Products",
+    "wholesale": "Wholesale",
+    "quality": "Quality & Trust",
+    "blog": "Insights",
+    "contact": "Contact"
+  },
+  "cta": {
+    "primary": "Request Wholesale Quote",
+    "bulkPricing": "Get Bulk Pricing",
+    "catalogue": "Download Catalogue",
+    "labReports": "View Lab Reports",
+    "readStory": "Read our story",
+    "exploreSource": "Explore the source",
+    "viewProducts": "View the range",
+    "contactTeam": "Contact the team",
+    "allInsights": "All insights",
+    "backToInsights": "Back to insights"
+  },
+  "common": {
+    "tagline": "Purity You Can Trust",
+    "skipToContent": "Skip to content",
+    "languageLabel": "Language",
+    "menu": "Menu",
+    "close": "Close",
+    "readingTime": "{minutes} min read",
+    "published": "Published {date}",
+    "updated": "Updated {date}",
+    "wholesaleFirst": "Wholesale-first",
+    "originLabel": "Northern Pakistan"
+  },
+  "header": {
+    "announcement": "Wholesale-first. Serving hotels, restaurants, corporates and institutions across Pakistan."
+  },
+  "footer": {
+    "explore": "Explore",
+    "business": "Business",
+    "contactHeading": "Contact",
+    "legalHeading": "Legal",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "rights": "All rights reserved.",
+    "blurb": "Clear water from Northern Pakistan, brought forward with modern standards and an ancient sense of duty.",
+    "originLine": "Sourced and bottled in Northern Pakistan."
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Natural mineral water · Northern Pakistan",
+      "headline": "Purity you can trust.",
+      "claim": "We do not sell mountain fairy tales from Europe. We draw water from the same land that taught the world how to live with water 5,000 years ago. This is not nostalgia. It is civilisational continuity.",
+      "primaryCta": "Request Wholesale Quote",
+      "secondaryCta": "View Lab Reports",
+      "imageAlt": "A Mountiva bottle against a calm Northern Pakistan landscape"
+    },
+    "philosophy": {
+      "eyebrow": "Philosophy",
+      "heading": "Water that belongs to this land",
+      "body": "While others sell mountain fairy tales from Europe, we draw from the same land that taught the world how to live with water 5,000 years ago. We do not borrow stories. We carry the one that is already ours — the deep aquifers of Northern Pakistan, filtered by time and geology, protected with modern care.",
+      "cta": "Read our story"
+    },
+    "source": {
+      "eyebrow": "Our Source",
+      "heading": "Filtered by time and geology",
+      "body": "High in the Northern reaches of Pakistan, rain and snowmelt begin a long, quiet journey through stone, gravel and alluvial earth shaped over millennia. Mountiva draws from these deep aquifers. The water has already been filtered by the land itself.",
+      "points": [
+        { "title": "Deep aquifer", "text": "Water held in rock for years, stable in mineral character." },
+        { "title": "Natural filtration", "text": "Sediment layers strain the water long before we reach it." },
+        { "title": "Protected recharge", "text": "Abstraction is controlled so the aquifer refills faster than it is drawn." }
+      ],
+      "cta": "Explore the source"
+    },
+    "products": {
+      "eyebrow": "Products & Packaging",
+      "heading": "Built for wholesale",
+      "body": "Still and sparkling, from 330 ml glass to 19 litre returnable. Mixed pallets, nationwide delivery, and private-label production for brands that want Mountiva quality under their own name.",
+      "cta": "View the range"
+    },
+    "wholesale": {
+      "eyebrow": "Wholesale Hub",
+      "heading": "A supply partner, not just a price",
+      "body": "Transparent MOQs, dependable lead times, palletised logistics across Pakistan, and a Certificate of Analysis with every batch. Tell us your volume and destination — we will come back with pricing.",
+      "primaryCta": "Request Wholesale Quote",
+      "secondaryCta": "Download Catalogue",
+      "stats": [
+        { "value": "6", "label": "wholesale formats" },
+        { "value": "48–120", "label": "cases per pallet" },
+        { "value": "8–12 wks", "label": "private-label lead time" }
+      ]
+    },
+    "trust": {
+      "eyebrow": "Quality & Trust",
+      "heading": "A quiet promise, documented",
+      "body": "Purity you can trust is not a slogan. Every production run is batch-coded and backed by analysis. Read the reports before you commit.",
+      "cta": "View Lab Reports"
+    },
+    "insights": {
+      "eyebrow": "Insights",
+      "heading": "Perspective on water, origin and supply",
+      "cta": "All insights"
+    }
+  },
+  "story": {
+    "hero": {
+      "eyebrow": "Our Story",
+      "heading": "Civilisational continuity",
+      "lede": "Mountiva is water that belongs to this land."
+    },
+    "philosophyHeading": "Philosophy",
+    "philosophy": [
+      "While others sell mountain fairy tales from Europe, we draw from the same land that taught the world how to live with water 5,000 years ago.",
+      "This is not nostalgia. It is civilisational continuity.",
+      "We do not borrow stories. We carry the one that is already ours — the deep aquifers of Northern Pakistan, filtered by time and geology, protected with modern care.",
+      "Purity You Can Trust is not a slogan. It is a quiet promise rooted in responsibility."
+    ],
+    "storyHeading": "The Story",
+    "story": [
+      "High in the Northern reaches of Pakistan, rain and snowmelt begin a long, quiet journey through stone, gravel, and alluvial earth shaped over millennia.",
+      "This is the same land that once fed the great cities of the Indus Valley — a civilisation that understood water as the foundation of life and order.",
+      "Mountiva draws from these deep aquifers. The water has already been filtered by the land itself. We protect it, respect it, and bottle it with precision.",
+      "No imported myths. No borrowed purity. Just clear water from Northern Pakistan, brought forward with modern standards and an ancient sense of duty.",
+      "This is Mountiva. Purity you can trust."
+    ],
+    "voiceHeading": "Brand Voice",
+    "voice": {
+      "line": "Calm. Confident. Modern. Grounded. Young in energy, serious in responsibility.",
+      "preferHeading": "We lean into",
+      "prefer": ["Depth", "Clarity", "Trust", "Northern land", "Continuity", "Responsibility", "Pure"],
+      "avoidHeading": "We avoid",
+      "avoid": ["Fairy-tale mountain language", "European alpine romance", "Aggressive or rebellious tones"]
+    },
+    "closingCta": {
+      "heading": "Bring Mountiva to your business",
+      "body": "Wholesale-first, with private-label options for hotels, restaurants, corporates and institutions.",
+      "cta": "Request Wholesale Quote"
+    }
+  },
+  "source": {
+    "hero": {
+      "eyebrow": "Our Source",
+      "heading": "The land does the filtering",
+      "lede": "Rain and snowmelt descend for years through stone, gravel and alluvial earth. We draw the water only after geology has finished its work."
+    },
+    "journeyHeading": "The journey underground",
+    "journey": [
+      { "step": "01", "title": "Collection at elevation", "text": "Rain and snowmelt gather in the Northern reaches of Pakistan and begin to percolate downward through fractured rock." },
+      { "step": "02", "title": "Slow descent", "text": "Over years, the water moves through gravel and fine alluvial earth shaped over millennia. Suspended particles and microbial load are strained out." },
+      { "step": "03", "title": "Mineral balance", "text": "Calcium, magnesium and bicarbonate are acquired from the host rock — never added. The result is stable and consistent in character." },
+      { "step": "04", "title": "Careful abstraction", "text": "We draw from the deep aquifer at a controlled rate, then move the water to bottle with minimal handling." }
+    ],
+    "stewardshipHeading": "Stewardship",
+    "stewardship": [
+      "We protect the recharge area so the water that enters the ground stays clean.",
+      "We monitor and cap abstraction so the aquifer is not drawn down faster than it refills.",
+      "We keep the path from source to bottle short, closed and clean."
+    ],
+    "transparencyHeading": "Why we describe the source in general terms",
+    "transparency": "Mountiva names Northern Pakistan and the deep aquifer, but not exact wellheads or recharge coordinates. Publishing precise locations protects nobody and the resource least of all. Wholesale partners under agreement receive the full technical dossier, including source water analysis.",
+    "closingCta": {
+      "heading": "See the analysis",
+      "body": "Source water and finished product are both tested. The reports are yours to read.",
+      "cta": "View Lab Reports"
+    }
+  },
+  "products": {
+    "hero": {
+      "eyebrow": "Products & Packaging",
+      "heading": "A range built for wholesale",
+      "lede": "Still and sparkling. Glass and PET. From the boardroom to the distributor pallet. Every format carries the same water and the same promise."
+    },
+    "tableHeading": "Wholesale formats",
+    "columns": {
+      "format": "Format",
+      "pack": "Pack configuration",
+      "pallet": "Cases / pallet",
+      "moq": "MOQ (cases)",
+      "channel": "Typical channel"
+    },
+    "moqNote": "Minimum order quantities are per format. Mixed-format pallets are available for contracted accounts.",
+    "privateLabelHeading": "Private label",
+    "privateLabelBody": "Your brand on Mountiva-filled bottles — same source, same quality practice, your identity on the shelf.",
+    "privateLabelMeta": {
+      "volume": "Minimum volume",
+      "leadTime": "Lead time"
+    },
+    "closingCta": {
+      "heading": "Request the full catalogue",
+      "body": "Specifications, artwork templates, pallet drawings and current MOQs in one document.",
+      "primaryCta": "Download Catalogue",
+      "secondaryCta": "Request Wholesale Quote"
+    }
+  },
+  "wholesale": {
+    "hero": {
+      "eyebrow": "Wholesale Hub",
+      "heading": "Get bulk pricing",
+      "lede": "Mountiva is a wholesale-first business. Tell us the format, volume and destination — we respond with pricing, lead time and terms, usually within two working days."
+    },
+    "howHeading": "How it works",
+    "how": [
+      { "step": "01", "title": "Send your requirement", "text": "Use the form below with your formats, monthly volume and delivery city or port." },
+      { "step": "02", "title": "Receive a quote", "text": "Pricing, MOQ confirmation, lead time and payment terms — typically within two working days." },
+      { "step": "03", "title": "Sample and sign", "text": "We arrange samples and a supply agreement with agreed volumes and safety stock." },
+      { "step": "04", "title": "Scheduled delivery", "text": "Palletised, batch-coded stock delivered on schedule, with a Certificate of Analysis per run." }
+    ],
+    "logisticsHeading": "Logistics & terms",
+    "logistics": [
+      { "title": "Coverage", "text": "Nationwide delivery across Pakistan. GCC export enquiries welcome (FOB Karachi)." },
+      { "title": "Pallet configuration", "text": "48–120 cases per pallet depending on format. Mixed pallets for contracted accounts." },
+      { "title": "Lead time", "text": "Standard stock from days at MOQ. Private label 8–12 weeks from artwork sign-off." },
+      { "title": "Quality documents", "text": "Certificate of Analysis per batch; certifications and third-party lab reports on request." }
+    ],
+    "formHeading": "Request a wholesale quote",
+    "formIntro": "All fields marked with * are required. Your details are used only to prepare and send your quote.",
+    "closingCta": {
+      "heading": "Prefer to talk first?",
+      "body": "Call or message the wholesale team directly.",
+      "cta": "Contact the team"
+    }
+  },
+  "quality": {
+    "hero": {
+      "eyebrow": "Quality & Trust",
+      "heading": "Purity you can trust",
+      "lede": "A quiet promise rooted in responsibility — and backed by documents you can read before you commit."
+    },
+    "practiceHeading": "How we hold the line",
+    "practice": [
+      { "title": "Batch coding", "text": "Every production run carries a unique code. Any bottle can be traced back to its run, its source draw and its analysis." },
+      { "title": "Certificate of Analysis", "text": "Each wholesale batch ships with a CoA covering microbiological and physico-chemical parameters." },
+      { "title": "Third-party testing", "text": "Independent accredited laboratories test source water and finished product on a defined schedule." },
+      { "title": "Controlled filling", "text": "A short, closed, clean path from aquifer to sealed bottle, with tethered tamper-evident caps." }
+    ],
+    "reportsHeading": "Lab reports",
+    "reportsIntro": "Representative reports are published here. Contracted wholesale partners receive the current full set, including source water analysis.",
+    "reportsPending": "Reports are being prepared for publication. Request the current set directly and we will send it the same day.",
+    "certsHeading": "Certifications",
+    "certsIntro": "Held or in progress. Certificates are shared on request and verified at contract stage.",
+    "certs": [
+      { "name": "PSQCA licence", "detail": "Pakistan Standards & Quality Control Authority — bottled water." },
+      { "name": "ISO 22000", "detail": "Food safety management (in progress)." },
+      { "name": "Halal certification", "detail": "Issued by an accredited Pakistani body." },
+      { "name": "Third-party lab panel", "detail": "Accredited laboratory testing schedule." }
+    ],
+    "faqHeading": "Common questions",
+    "faq": [
+      { "question": "Where does Mountiva water come from?", "answer": "From deep aquifers in the Northern reaches of Pakistan. Rain and snowmelt descend for years through stone, gravel and alluvial earth, and are filtered by the land before we draw them." },
+      { "question": "Why don't you publish the exact source location?", "answer": "We name Northern Pakistan and the deep aquifer, but not exact wellheads or recharge coordinates. Precise locations protect nobody and the resource least of all. Wholesale partners under agreement receive the full technical dossier." },
+      { "question": "Do you provide lab reports and certificates?", "answer": "Yes. Every wholesale batch ships with a Certificate of Analysis, and third-party lab reports and certifications are available on request and verified at contract stage." },
+      { "question": "What is the minimum order?", "answer": "MOQs are set per format, from around 40 to 80 cases. Contracted accounts can order mixed-format pallets." },
+      { "question": "Do you offer private label?", "answer": "Yes. Your brand and artwork on Mountiva-filled bottles, from a minimum of roughly three containers per year, with an 8–12 week lead time from artwork sign-off." }
+    ],
+    "closingCta": {
+      "heading": "Ready to evaluate Mountiva?",
+      "body": "Request the current reports and a wholesale quote in one step.",
+      "cta": "Request Wholesale Quote"
+    }
+  },
+  "blog": {
+    "hero": {
+      "eyebrow": "Insights",
+      "heading": "Perspective on water, origin and supply",
+      "lede": "Short, plain-language notes on where our water comes from, how we hold quality, and what to look for in a wholesale partner."
+    },
+    "categoryLabel": "Category",
+    "empty": "New insights are on the way."
+  },
+  "contact": {
+    "hero": {
+      "eyebrow": "Contact",
+      "heading": "Talk to Mountiva",
+      "lede": "Wholesale supply, private label, or partnership. We are based in Pakistan and serve nationwide, with GCC export enquiries welcome."
+    },
+    "directHeading": "Direct",
+    "wholesaleHeading": "Wholesale enquiries",
+    "generalHeading": "General",
+    "phoneLabel": "Phone",
+    "whatsappLabel": "WhatsApp",
+    "emailLabel": "Email",
+    "locationLabel": "Location",
+    "hoursLabel": "Hours",
+    "hoursValue": "Monday–Saturday, 9:00–18:00 PKT",
+    "formHeading": "Send a message",
+    "closingCta": {
+      "heading": "Looking for pricing?",
+      "body": "The wholesale form captures volume and destination so we can quote accurately.",
+      "cta": "Request Wholesale Quote"
+    }
+  },
+  "form": {
+    "fields": {
+      "name": "Full name",
+      "company": "Company / organisation",
+      "role": "Your role",
+      "email": "Work email",
+      "phone": "Phone / WhatsApp",
+      "country": "Country",
+      "city": "City / delivery point",
+      "businessType": "Business type",
+      "formats": "Formats of interest",
+      "monthlyVolume": "Estimated monthly volume (cases)",
+      "privateLabel": "Interested in private label",
+      "message": "Message",
+      "consent": "I agree to Mountiva contacting me about this enquiry."
+    },
+    "placeholders": {
+      "name": "e.g. Ayesha Khan",
+      "company": "e.g. Serena Hotels",
+      "role": "e.g. Procurement Manager",
+      "email": "you@company.com",
+      "phone": "+92 …",
+      "city": "e.g. Lahore",
+      "monthlyVolume": "e.g. 800",
+      "message": "Tell us about your requirement, timelines and destination."
+    },
+    "businessTypes": {
+      "hotel": "Hotel / hospitality group",
+      "restaurant": "Restaurant / café / catering",
+      "corporate": "Corporate / office",
+      "institution": "Institution (hospital, school, government)",
+      "distributor": "Distributor / wholesaler",
+      "retail": "Retail chain",
+      "events": "Events / conferences",
+      "other": "Other"
+    },
+    "formatOptions": {
+      "still-330": "Still 330 ml glass",
+      "still-500": "Still 500 ml PET",
+      "still-1000": "Still 1 L PET",
+      "still-1500": "Still 1.5 L PET",
+      "sparkling-330": "Sparkling 330 ml glass",
+      "dispenser-19l": "Still 19 L returnable"
+    },
+    "submit": "Send enquiry",
+    "submitting": "Sending…",
+    "successHeading": "Thank you — your enquiry is with us.",
+    "successBody": "The wholesale team will reply, usually within two working days. For anything urgent, call {phone}.",
+    "errorHeading": "That didn't send.",
+    "errorBody": "Please check the highlighted fields and try again, or email {email} directly.",
+    "validation": {
+      "required": "This field is required.",
+      "email": "Enter a valid email address.",
+      "consent": "Please confirm you agree to be contacted.",
+      "minMessage": "Please add a little more detail.",
+      "number": "Enter a number."
+    },
+    "optional": "optional"
+  },
+  "notFound": {
+    "heading": "This page has run dry",
+    "body": "The link may be old or mistyped. Everything still flows from the home page.",
+    "cta": "Return home"
+  }
+}
