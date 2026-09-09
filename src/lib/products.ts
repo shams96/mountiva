@@ -16,7 +16,7 @@ export type Product = {
 export const products: Product[] = [
   {
     slug: 'still-330',
-    format: 'Still — 330 ml glass',
+    format: 'Still · 330 ml glass',
     volume: '330 ml',
     packConfig: '24 bottles / case',
     casesPerPallet: 84,
@@ -26,7 +26,7 @@ export const products: Product[] = [
   },
   {
     slug: 'still-500',
-    format: 'Still — 500 ml PET',
+    format: 'Still · 500 ml PET',
     volume: '500 ml',
     packConfig: '20 bottles / case',
     casesPerPallet: 120,
@@ -36,7 +36,7 @@ export const products: Product[] = [
   },
   {
     slug: 'still-1000',
-    format: 'Still — 1 litre PET',
+    format: 'Still · 1 litre PET',
     volume: '1 litre',
     packConfig: '12 bottles / case',
     casesPerPallet: 96,
@@ -46,7 +46,7 @@ export const products: Product[] = [
   },
   {
     slug: 'still-1500',
-    format: 'Still — 1.5 litre PET',
+    format: 'Still · 1.5 litre PET',
     volume: '1.5 litre',
     packConfig: '6 bottles / case',
     casesPerPallet: 100,
@@ -56,7 +56,7 @@ export const products: Product[] = [
   },
   {
     slug: 'sparkling-330',
-    format: 'Sparkling — 330 ml glass',
+    format: 'Sparkling · 330 ml glass',
     volume: '330 ml',
     packConfig: '24 bottles / case',
     casesPerPallet: 84,
@@ -66,7 +66,7 @@ export const products: Product[] = [
   },
   {
     slug: 'dispenser-19l',
-    format: 'Still — 19 litre returnable',
+    format: 'Still · 19 litre returnable',
     volume: '19 litre',
     packConfig: 'Single, returnable',
     casesPerPallet: 48,

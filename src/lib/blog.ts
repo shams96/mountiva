@@ -67,7 +67,7 @@ export const posts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'The whole position fits in one line: clear water from Northern Pakistan, handled with modern precision.'
+        text: 'Clear water from Northern Pakistan, brought forward with modern care. The lab reports on the Quality page are there to hold that to account.'
       }
     ]
   },
