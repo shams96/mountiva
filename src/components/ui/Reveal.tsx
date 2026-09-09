@@ -1,39 +1,27 @@
-'use client';
-
-import type { ReactNode } from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+import type { CSSProperties, ReactNode } from 'react';
 import { cn } from '@/lib/cn';
 
 type RevealProps = {
   children: ReactNode;
   className?: string;
+  /** Stagger step. Kept as a seconds-ish number for call-site compatibility;
+   *  mapped to a scroll-range offset (~0.05 per step). */
   delay?: number;
-  y?: number;
-  as?: 'div' | 'li' | 'section' | 'article' | 'span';
+  as?: 'div' | 'li' | 'section' | 'article' | 'span' | 'ol' | 'ul';
 };
 
 /**
- * Calm entrance animation. Respects prefers-reduced-motion by rendering
- * the content statically with no transform.
+ * Scroll-driven entrance, zero JavaScript.
+ *
+ * Uses CSS `animation-timeline: view()` (90%+ support in 2026). Browsers
+ * without it — and anyone with `prefers-reduced-motion` — simply get the
+ * content, fully visible, no animation. See `.reveal` in globals.css.
  */
-export function Reveal({ children, className, delay = 0, y = 14, as = 'div' }: RevealProps) {
-  const reduce = useReducedMotion();
-  const MotionTag = motion[as];
-
-  if (reduce) {
-    const Tag = as;
-    return <Tag className={className}>{children}</Tag>;
-  }
-
+export function Reveal({ children, className, delay = 0, as: Tag = 'div' }: RevealProps) {
+  const style = { '--reveal-i': Math.max(0, Math.round(delay / 0.05)) } as CSSProperties;
   return (
-    <MotionTag
-      className={cn(className)}
-      initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '0px 0px -12% 0px' }}
-      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
-    >
+    <Tag className={cn('reveal', className)} style={style}>
       {children}
-    </MotionTag>
+    </Tag>
   );
 }

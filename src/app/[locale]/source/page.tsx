@@ -10,6 +10,7 @@ import { Section } from '@/components/ui/Section';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Reveal } from '@/components/ui/Reveal';
 import { CtaBanner } from '@/components/sections/CtaBanner';
+import { SourceJourney } from '@/components/sections/SourceJourney';
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -54,15 +55,9 @@ function SourceContent() {
 
       <Section tone="surface">
         <SectionHeading title={t('journeyHeading')} />
-        <ol className="mt-10 grid gap-px overflow-hidden rounded-sm border border-stone bg-stone md:grid-cols-2">
-          {journey.map((j, i) => (
-            <Reveal key={j.step} delay={i * 0.05} as="li" className="bg-surface p-8">
-              <span className="font-serif text-2xl text-signal">{j.step}</span>
-              <h3 className="mt-3 text-title text-ink">{j.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate">{j.text}</p>
-            </Reveal>
-          ))}
-        </ol>
+        <div className="mt-12">
+          <SourceJourney steps={journey} />
+        </div>
       </Section>
 
       <Section tone="paper">
