@@ -81,41 +81,41 @@ function StoryContent() {
         <MountainMotif className="mt-12 hidden h-8 w-auto text-stone lg:block" />
       </Section>
 
-      <Section tone="night">
-        <SectionHeading tone="paper" title={t('voiceHeading')} />
+      <Section tone="mist">
+        <SectionHeading title={t('voiceHeading')} />
         <div className="mt-10 flex flex-col gap-10">
+          <Reveal>
+            <p className="max-w-prose font-serif text-title text-ink">{voice.line}</p>
+          </Reveal>
+          <div className="grid gap-8 sm:grid-cols-2">
             <Reveal>
-              <p className="max-w-prose font-serif text-title text-paper">{voice.line}</p>
+              <h3 className="eyebrow">{voice.preferHeading}</h3>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {voice.prefer.map((w) => (
+                  <li
+                    key={w}
+                    className="rounded-sm border border-signal/30 bg-signal/[0.04] px-3 py-1 text-sm text-ink"
+                  >
+                    {w}
+                  </li>
+                ))}
+              </ul>
             </Reveal>
-            <div className="grid gap-8 sm:grid-cols-2">
-              <Reveal>
-                <h3 className="eyebrow text-paper/60">{voice.preferHeading}</h3>
-                <ul className="mt-4 flex flex-wrap gap-2">
-                  {voice.prefer.map((w) => (
-                    <li
-                      key={w}
-                      className="rounded-sm border border-glacier-soft/40 bg-glacier/[0.06] px-3 py-1 text-sm text-paper/90"
-                    >
-                      {w}
-                    </li>
-                  ))}
-                </ul>
-              </Reveal>
-              <Reveal delay={0.06}>
-                <h3 className="eyebrow text-paper/60">{voice.avoidHeading}</h3>
-                <ul className="mt-4 flex flex-col gap-2 text-sm text-paper/60">
-                  {voice.avoid.map((w) => (
-                    <li key={w} className="flex items-center gap-2">
-                      <span aria-hidden className="text-paper/40">
-                        ✕
-                      </span>
-                      {w}
-                    </li>
-                  ))}
-                </ul>
-              </Reveal>
-            </div>
+            <Reveal delay={0.06}>
+              <h3 className="eyebrow">{voice.avoidHeading}</h3>
+              <ul className="mt-4 flex flex-col gap-2 text-sm text-ash">
+                {voice.avoid.map((w) => (
+                  <li key={w} className="flex items-center gap-2">
+                    <span aria-hidden className="text-signal-soft">
+                      ✕
+                    </span>
+                    {w}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
           </div>
+        </div>
       </Section>
     </>
   );
