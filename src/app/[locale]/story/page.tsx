@@ -86,7 +86,7 @@ function StoryContent() {
         </div>
       </Section>
 
-      <Section tone="ink">
+      <Section tone="night">
         <div className="grid gap-10 lg:grid-cols-[16rem_1fr] lg:gap-16">
           <h2 className="text-display-md text-paper">{t('voiceHeading')}</h2>
           <div className="flex flex-col gap-10">
@@ -100,7 +100,7 @@ function StoryContent() {
                   {voice.prefer.map((w) => (
                     <li
                       key={w}
-                      className="rounded-sm border border-paper/20 px-3 py-1 text-sm text-paper/90"
+                      className="rounded-sm border border-glacier-soft/40 bg-glacier/[0.06] px-3 py-1 text-sm text-paper/90"
                     >
                       {w}
                     </li>

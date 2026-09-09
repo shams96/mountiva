@@ -102,7 +102,7 @@ function ProductsContent() {
         <p className="mt-6 max-w-measure text-xs text-ash">{t('moqNote')}</p>
       </Section>
 
-      <Section tone="ink">
+      <Section tone="night">
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
           <div>
             <h2 className="text-display-md text-paper">{t('privateLabelHeading')}</h2>

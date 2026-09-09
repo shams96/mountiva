@@ -13,7 +13,7 @@ export function Hero() {
       {/* Soft Northern horizon wash */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-[60%] bg-gradient-to-b from-northern-pale/60 to-transparent"
+        className="pointer-events-none absolute inset-x-0 top-0 h-[60%] bg-gradient-to-b from-glacier-pale/70 via-northern-pale/30 to-transparent"
       />
       <Container className="relative grid items-center gap-12 py-16 md:py-24 lg:grid-cols-[1.1fr_0.9fr] lg:gap-8 lg:py-28">
         <div className="max-w-xl">
@@ -26,7 +26,7 @@ export function Hero() {
             </h1>
           </Reveal>
           <Reveal delay={0.12}>
-            <p className="mt-7 border-s-2 border-northern ps-5 text-lede leading-relaxed text-slate">
+            <p className="mt-7 border-s-2 border-glacier ps-5 text-lede leading-relaxed text-slate">
               {t('claim')}
             </p>
           </Reveal>

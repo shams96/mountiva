@@ -16,8 +16,8 @@ export default function GlobalNotFound() {
           alignItems: 'center',
           justifyContent: 'center',
           fontFamily: 'ui-sans-serif, system-ui, sans-serif',
-          background: '#FBFBF9',
-          color: '#161615',
+          background: '#FAFAF7',
+          color: '#15181A',
           textAlign: 'center',
           padding: '2rem'
         }}
@@ -33,8 +33,8 @@ export default function GlobalNotFound() {
           href="/"
           style={{
             marginTop: '1.5rem',
-            background: '#161615',
-            color: '#FBFBF9',
+            background: '#15181A',
+            color: '#FAFAF7',
             padding: '0.75rem 1.5rem',
             borderRadius: 4,
             textDecoration: 'none',

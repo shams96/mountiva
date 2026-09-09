@@ -95,7 +95,7 @@ function WholesaleContent() {
         </div>
       </Section>
 
-      <Section tone="ink">
+      <Section tone="night">
         <Reveal className="mx-auto flex max-w-2xl flex-col items-center text-center">
           <h2 className="text-display-md text-paper">{t('closingCta.heading')}</h2>
           <p className="mt-3 text-lede text-paper/75">{t('closingCta.body')}</p>

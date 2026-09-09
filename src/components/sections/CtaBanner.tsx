@@ -12,9 +12,9 @@ type CtaBannerProps = {
 
 export function CtaBanner({ heading, body, primary, secondary }: CtaBannerProps) {
   return (
-    <Section tone="ink">
+    <Section tone="night">
       <Reveal className="mx-auto flex max-w-3xl flex-col items-center text-center">
-        <MountainMotif className="h-6 w-auto text-paper/70" />
+        <MountainMotif className="h-6 w-auto text-glacier-soft" />
         <h2 className="mt-6 text-display-md text-paper md:text-display-lg">{heading}</h2>
         <p className="mt-4 max-w-xl text-lede leading-relaxed text-paper/75">{body}</p>
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">

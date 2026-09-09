@@ -19,24 +19,43 @@ const config: Config = {
     },
     extend: {
       colors: {
-        paper: '#FBFBF9',
+        // Grounds — snowfield / limestone / glacier melt
+        paper: '#FAFAF7',
         surface: '#FFFFFF',
-        mist: '#F2F2EF',
-        stone: '#E4E4DF',
-        ash: '#9B9B93',
-        slate: '#5B5B54',
-        ink: '#161615',
-        charcoal: '#0E0E0D',
-        // Northern accents — used sparingly
-        northern: {
-          DEFAULT: '#2E4A5A',
-          soft: '#5C7A8A',
-          pale: '#E8EEF1'
+        mist: '#EFF1EE',
+        stone: '#E0E1DB',
+        ash: '#94978F',
+        slate: '#555A52',
+        ink: '#15181A',
+        charcoal: '#0C0F11',
+        // Deep dusk over the Karakoram — used for full-bleed dark sections
+        night: {
+          DEFAULT: '#141C22',
+          soft: '#243139'
         },
+        // Karakoram river blue — the primary accent, still restrained
+        northern: {
+          DEFAULT: '#245A6B',
+          soft: '#6C97A3',
+          pale: '#E2ECEE'
+        },
+        // Glacial meltwater turquoise — highlights, washes, focus
+        glacier: {
+          DEFAULT: '#3C8C8B',
+          soft: '#7FB3B1',
+          pale: '#E0EEEC'
+        },
+        // Deodar cedar / Kaghan pine — sparing organic accent
+        pine: {
+          DEFAULT: '#3A5647',
+          soft: '#6E8778',
+          pale: '#E6EDE7'
+        },
+        // Skardu cold-desert sandstone / Hunza apricot clay — warm counterweight
         earth: {
-          DEFAULT: '#8C7355',
-          soft: '#B49E82',
-          pale: '#F0EAE1'
+          DEFAULT: '#9A6B49',
+          soft: '#C29A79',
+          pale: '#F1E8DD'
         }
       },
       fontFamily: {

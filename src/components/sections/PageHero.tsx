@@ -18,7 +18,7 @@ export function PageHero({ eyebrow, heading, lede, children, motif = true }: Pag
     <section className={cn('relative overflow-hidden border-b border-stone bg-paper')}>
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-northern-pale/50 to-transparent"
+        className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-glacier-pale/60 to-transparent"
       />
       <Container className="relative py-16 md:py-24">
         <Reveal className="max-w-3xl">

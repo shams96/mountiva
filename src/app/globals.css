@@ -40,7 +40,7 @@
   }
 
   :focus-visible {
-    @apply outline-none ring-2 ring-northern ring-offset-2 ring-offset-paper;
+    @apply outline-none ring-2 ring-glacier ring-offset-2 ring-offset-paper;
   }
 
   a {
