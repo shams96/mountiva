@@ -12,11 +12,26 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-paper">
-      {/* Soft Northern horizon wash */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-[60%] bg-gradient-to-b from-glacier-pale/70 via-northern-pale/30 to-transparent"
-      />
+      {media.heroBackground.enabled ? (
+        <>
+          <Image
+            src={media.heroBackground.src}
+            alt={media.heroBackground.alt}
+            fill
+            priority
+            sizes="100vw"
+            className="pointer-events-none object-cover"
+          />
+          <div aria-hidden className="absolute inset-0 bg-paper/70" />
+        </>
+      ) : (
+        /* Soft Northern horizon wash — stands in for a landscape until one is set */
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 h-[60%] bg-gradient-to-b from-glacier-pale/70 via-northern-pale/30 to-transparent"
+        />
+      )}
+
       <Container className="relative grid items-center gap-12 py-16 md:py-24 lg:grid-cols-[1.1fr_0.9fr] lg:gap-8 lg:py-28">
         <div className="max-w-xl">
           <Reveal>
@@ -65,9 +80,6 @@ export function Hero() {
               <BottleMark className="relative h-[420px] w-auto md:h-[520px]" />
             )}
           </div>
-          <p className="mt-6 text-center text-xs uppercase tracking-eyebrow text-ash">
-            {t('imageAlt')}
-          </p>
         </Reveal>
       </Container>
     </section>

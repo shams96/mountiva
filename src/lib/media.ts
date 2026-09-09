@@ -15,10 +15,17 @@
  * source document, not a web asset.
  */
 export const media = {
+  /** The bottle in the hero — a render or a cutout. Shown over `heroBackground`. */
   hero: {
     enabled: false,
     src: '/images/mountiva-hero.jpg',
-    alt: 'A Mountiva bottle against a calm Northern Pakistan skyline'
+    alt: 'A Mountiva bottle'
+  },
+  /** Optional Northern Pakistan landscape behind the hero bottle. */
+  heroBackground: {
+    enabled: false,
+    src: '/images/mountiva-hero-bg.jpg',
+    alt: ''
   },
   bottle: {
     enabled: false,
