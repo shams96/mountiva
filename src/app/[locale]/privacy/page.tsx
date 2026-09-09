@@ -31,9 +31,9 @@ export default async function PrivacyPage({ params }: Props) {
       <Section tone="surface">
         <div className="prose-mountiva">
           <p>
-            We collect only what you send us through the wholesale and contact forms — your name,
-            company, contact details, and the details of your enquiry. We use it to respond to you
-            and to manage a resulting business relationship.
+            We collect only what you send us through the wholesale and contact forms: your name,
+            company, contact details, and what you tell us about your enquiry. We use it to respond
+            to you and to manage a business relationship if one begins.
           </p>
           <h2>What we collect</h2>
           <ul>

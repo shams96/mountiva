@@ -41,11 +41,11 @@ export const posts: BlogPost[] = [
     body: [
       {
         type: 'p',
-        text: 'Most premium water brands sell a picture: a distant European peak, snow that never melts, a story that was never ours. It photographs well. It also asks a Pakistani buyer to believe that purity is something imported.'
+        text: 'Most premium water brands sell a picture: a distant European peak, snow that never melts, a story that was never ours. It photographs well, and it asks a Pakistani buyer to accept that purity has to be imported.'
       },
       {
         type: 'p',
-        text: 'Mountiva starts from a different fact. The land of the Indus basin held one of the earliest civilisations that treated water as infrastructure — wells, covered drains, bathing tanks, planned streets that sloped water away from homes. People here understood water as the foundation of order long before it became a marketing category.'
+        text: 'Mountiva starts from a different fact. The land of the Indus basin held one of the earliest civilisations that treated water as infrastructure: wells, covered drains, bathing tanks, planned streets that sloped water away from homes. People here understood water as the foundation of order long before it became a marketing category.'
       },
       { type: 'h2', text: 'The claim, stated plainly' },
       {
@@ -54,20 +54,20 @@ export const posts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'Continuity is a stronger idea than heritage. Heritage looks back and stops. Continuity means the same responsibility is still being carried — by the geology that filters the water, and by the people who bottle it under modern standards today.'
+        text: 'We say continuity rather than heritage on purpose. Heritage points at the past and stays there. Continuity means the same duty is still being carried out: by the geology that filters the water, and by the people who bottle it to modern standards.'
       },
       { type: 'h2', text: 'What this means for the brand' },
       {
         type: 'list',
         items: [
-          'No borrowed imagery. The landscape on our materials is Northern Pakistan.',
-          'No overstated romance. The tone is calm, confident and grounded.',
-          'No vague science. Quality claims are backed by lab reports you can read.'
+          'Every landscape we show is Northern Pakistan.',
+          'The tone stays calm and grounded, without alpine romance.',
+          'Quality claims come with lab reports you can read.'
         ]
       },
       {
         type: 'p',
-        text: 'That is the whole position. Clear water from Northern Pakistan, carried forward with precision and an old sense of duty.'
+        text: 'The whole position fits in one line: clear water from Northern Pakistan, handled with modern precision.'
       }
     ]
   },
@@ -115,7 +115,7 @@ export const posts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'We describe the source in general terms on purpose. The exact wellheads and recharge zones are protected information — publishing precise coordinates protects nobody and the resource least of all.'
+        text: 'We describe the source in general terms on purpose. Exact wellheads and recharge zones are protected information; naming them would help no one and could put the resource at risk.'
       }
     ]
   },
@@ -123,7 +123,7 @@ export const posts: BlogPost[] = [
     slug: 'what-a-wholesale-buyer-should-ask',
     title: 'What a serious wholesale buyer should ask a water supplier',
     excerpt:
-      'A short checklist for hotels, restaurants, distributors and institutions evaluating a bulk water partner — beyond price per case.',
+      'A short checklist for hotels, restaurants, distributors and institutions evaluating a bulk water partner, beyond price per case.',
     publishedAt: '2026-08-28',
     readingMinutes: 4,
     category: 'Wholesale',
@@ -145,7 +145,7 @@ export const posts: BlogPost[] = [
         items: [
           'What is your standing production capacity, and your lead time at MOQ versus at container volume?',
           'Can you hold safety stock for a contracted account, and how is a shortfall handled?',
-          'What are your delivery terms — ex-works, delivered, palletised, and to which cities?'
+          'What are your delivery terms: ex-works or delivered, palletised, and to which cities?'
         ]
       },
       { type: 'h2', text: 'Quality evidence' },
@@ -162,7 +162,7 @@ export const posts: BlogPost[] = [
         type: 'list',
         items: [
           'What formats and pack configurations are available, and can they be mixed on a pallet?',
-          'What does private label require — minimum volume, artwork process, lead time?',
+          'What does private label require: minimum volume, artwork process, lead time?',
           'What are payment terms for a contracted wholesale account?'
         ]
       },

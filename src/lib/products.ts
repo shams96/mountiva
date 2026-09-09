@@ -78,10 +78,10 @@ export const products: Product[] = [
 
 export const privateLabel = {
   minAnnualVolume: '3 containers / year (approx. 60,000 cases)',
-  leadTimeWeeks: '8–12 weeks from artwork sign-off',
+  leadTimeWeeks: '8 to 12 weeks from artwork sign-off',
   options: [
     'Your brand name and label artwork on Mountiva-filled bottles',
-    'Choice of PET or glass, still or sparkling, across the 330 ml–1.5 L range',
+    'Choice of PET or glass, still or sparkling, across the 330 ml to 1.5 L range',
     'Neck tags, shrink sleeves, custom carton print and pallet configuration',
     'Compliance support for PSQCA (Pakistan) and destination-market labelling',
     'Dedicated batch coding and a Certificate of Analysis per production run'
