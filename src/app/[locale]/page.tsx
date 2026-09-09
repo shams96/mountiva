@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 
 import { buildMetadata } from '@/lib/seo';
+import { media } from '@/lib/media';
 import { getAllPosts } from '@/lib/blog';
 import { productSchema, faqSchema } from '@/lib/schema';
 import { JsonLd } from '@/components/seo/JsonLd';
@@ -98,8 +100,18 @@ function ProductsPreview() {
     <Section tone="mist">
       <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
         <Reveal>
-          <div className="flex aspect-[4/3] items-center justify-center rounded-sm border border-stone bg-surface">
-            <MountainMotif className="h-16 w-auto text-stone" />
+          <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-sm border border-stone bg-surface">
+            {media.bottle.enabled ? (
+              <Image
+                src={media.bottle.src}
+                alt={media.bottle.alt}
+                fill
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                className="object-cover"
+              />
+            ) : (
+              <MountainMotif className="h-16 w-auto text-stone" />
+            )}
           </div>
         </Reveal>
         <div>

@@ -87,10 +87,11 @@ docs/          DESIGN-SYSTEM.md, INFORMATION-ARCHITECTURE.md, CONTENT.md
    address, social URLs) and `NEXT_PUBLIC_SITE_URL`.
 2. **Enquiry routing** — set `WHOLESALE_WEBHOOK_URL` (CRM inbound hook / Zapier / Make /
    email relay). Until then, submissions are validated and logged server-side.
-3. **Imagery** — drop real bottle + Northern-landscape photography into `public/images/`
-   and swap the `BottleMark` / motif placeholders in `Hero`, `ProductsPreview`, OG image
-   (`public/images/og-default.jpg`, 1200×630) and PWA icons (`public/icon-192.png`,
-   `public/icon-512.png`).
+3. **Imagery** — drop real photography into `public/images/` (`mountiva-hero.jpg`,
+   `mountiva-bottle.jpg`, `og-default.jpg` 1200×630, PWA icons) and flip `enabled: true`
+   for each slot in `src/lib/media.ts`. Until then the `BottleMark` / `MountainMotif`
+   line art renders. The `.cdr` label file is a Corel print source — export the motif
+   to SVG and the label to a transparent PNG before using them on the web.
 4. **Lab reports** — add PDFs to `public/reports/` and list them in the `reports` array in
    `src/app/[locale]/quality/page.tsx`.
 5. **Product data** — confirm formats, pack configs, cases/pallet and MOQs in

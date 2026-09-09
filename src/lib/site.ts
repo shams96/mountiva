@@ -13,12 +13,12 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') || 'https://mountiva.com',
   locale: 'en_PK',
   contact: {
-    // Placeholders — confirm before publishing.
+    // Phone is from the bottle label artwork; confirm the rest before publishing.
     email: 'wholesale@mountiva.com',
     generalEmail: 'hello@mountiva.com',
-    phoneDisplay: '+92 51 000 0000',
-    phoneHref: '+925100000000',
-    whatsapp: '+92 300 000 0000',
+    phoneDisplay: '+92 333 9980912',
+    phoneHref: '+923339980912',
+    whatsapp: '+92 333 9980912',
     addressLocality: 'Islamabad',
     addressRegion: 'Islamabad Capital Territory',
     addressCountry: 'PK'

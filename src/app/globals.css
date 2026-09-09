@@ -36,11 +36,11 @@
   }
 
   ::selection {
-    @apply bg-northern text-surface;
+    @apply bg-signal text-surface;
   }
 
   :focus-visible {
-    @apply outline-none ring-2 ring-glacier ring-offset-2 ring-offset-paper;
+    @apply outline-none ring-2 ring-signal ring-offset-2 ring-offset-paper;
   }
 
   a {

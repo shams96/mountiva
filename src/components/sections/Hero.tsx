@@ -1,9 +1,11 @@
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Container } from '@/components/ui/Container';
 import { Reveal } from '@/components/ui/Reveal';
 import { ButtonLink } from '@/components/ui/Button';
 import { Eyebrow } from '@/components/ui/Eyebrow';
 import { BottleMark } from '@/components/brand/BottleMark';
+import { media } from '@/lib/media';
 
 export function Hero() {
   const t = useTranslations('home.hero');
@@ -26,7 +28,7 @@ export function Hero() {
             </h1>
           </Reveal>
           <Reveal delay={0.12}>
-            <p className="mt-7 border-s-2 border-glacier ps-5 text-lede leading-relaxed text-slate">
+            <p className="mt-7 border-s-2 border-signal ps-5 text-lede leading-relaxed text-slate">
               {t('claim')}
             </p>
           </Reveal>
@@ -48,7 +50,20 @@ export function Hero() {
               aria-hidden
               className="absolute -inset-8 rounded-full bg-white/70 blur-2xl"
             />
-            <BottleMark className="relative h-[420px] w-auto md:h-[520px]" />
+            {media.hero.enabled ? (
+              <div className="relative h-[420px] w-[300px] md:h-[520px] md:w-[380px]">
+                <Image
+                  src={media.hero.src}
+                  alt={media.hero.alt || t('imageAlt')}
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 300px, 380px"
+                  className="object-contain"
+                />
+              </div>
+            ) : (
+              <BottleMark className="relative h-[420px] w-auto md:h-[520px]" />
+            )}
           </div>
           <p className="mt-6 text-center text-xs uppercase tracking-eyebrow text-ash">
             {t('imageAlt')}

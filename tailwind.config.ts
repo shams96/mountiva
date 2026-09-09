@@ -33,7 +33,14 @@ const config: Config = {
           DEFAULT: '#141C22',
           soft: '#243139'
         },
-        // Karakoram river blue — the primary accent, still restrained
+        // Label red — the mark from the physical bottle. Used only as thin
+        // rules, the mountain motif and small accents, the way the label does.
+        signal: {
+          DEFAULT: '#D42E24',
+          soft: '#E06A63',
+          pale: '#FBE7E5'
+        },
+        // Karakoram river blue — landscape accent, still restrained
         northern: {
           DEFAULT: '#245A6B',
           soft: '#6C97A3',
