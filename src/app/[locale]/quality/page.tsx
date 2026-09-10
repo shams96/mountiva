@@ -91,11 +91,14 @@ function QualityContent() {
                     </span>
                     <a
                       href={`/reports/${r.file}`}
-                      className="link-quiet"
+                      className="link-quiet group"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      PDF →
+                      PDF
+                      <span className="cta-arrow" aria-hidden>
+                        →
+                      </span>
                     </a>
                   </li>
                 ))}

@@ -8,7 +8,7 @@ export function PostCard({ post }: { post: BlogPost }) {
   const date = new Date(post.publishedAt);
 
   return (
-    <article className="group flex h-full flex-col border-t border-ink pt-6">
+    <article className="card-wipe group flex h-full flex-col border-t border-ink pt-6">
       <div className="flex items-center gap-3 text-xs uppercase tracking-eyebrow text-ash">
         <span>{post.category}</span>
         <span aria-hidden>·</span>
@@ -17,7 +17,7 @@ export function PostCard({ post }: { post: BlogPost }) {
       <h3 className="mt-4 text-title text-ink">
         <Link
           href={`/blog/${post.slug}`}
-          className="no-underline transition-colors group-hover:text-northern"
+          className="no-underline transition-colors group-hover:text-signal"
         >
           {post.title}
         </Link>

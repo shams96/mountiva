@@ -91,11 +91,115 @@
   }
 
   .link-quiet {
-    @apply inline-flex items-center gap-1.5 text-sm font-medium text-ink no-underline transition-colors hover:text-northern;
+    @apply inline-flex items-center gap-1.5 text-sm font-medium text-ink no-underline transition-colors hover:text-signal;
   }
 
   .hairline {
     @apply border-t border-stone;
+  }
+}
+
+/* ---- Micro-interactions -------------------------------------------------
+   Felt, not noticed. One effect per element, <=300ms, 2-6px of travel.
+   prefers-reduced-motion keeps the end state (see the block below) but the
+   global reduce rule zeroes the durations, so feedback stays, motion goes. */
+
+/* Sliding underline — nav links, footer links, inline text links. */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  bottom: -0.18em;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+[dir='rtl'] .link-underline::after {
+  transform-origin: right;
+}
+.link-underline:focus-visible::after,
+.link-underline[aria-current='page']::after {
+  transform: scaleX(1);
+}
+.link-underline[aria-current='page']::after {
+  background: #d42e24;
+}
+@media (hover: hover) {
+  .link-underline:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+/* Directional arrow nudge on CTAs. */
+.cta-arrow {
+  display: inline-block;
+  margin-inline-start: 0.15em;
+  transition: transform 0.2s ease;
+}
+[dir='rtl'] .cta-arrow {
+  transform: scaleX(-1);
+}
+@media (hover: hover) {
+  a:hover .cta-arrow,
+  button:hover .cta-arrow,
+  .group:hover .cta-arrow {
+    transform: translateX(3px);
+  }
+  [dir='rtl'] a:hover .cta-arrow,
+  [dir='rtl'] button:hover .cta-arrow,
+  [dir='rtl'] .group:hover .cta-arrow {
+    transform: scaleX(-1) translateX(3px);
+  }
+}
+
+/* Form: the label picks up the ink accent while its control is focused. */
+.field:focus-within > label {
+  color: #15181A;
+}
+
+/* Linked cards: the top rule wipes to accent red on hover. */
+@media (hover: hover) {
+  .card-wipe {
+    position: relative;
+  }
+  .card-wipe::before {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    top: -1px;
+    height: 1px;
+    background: #d42e24;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .card-wipe:hover::before,
+  .card-wipe:focus-within::before {
+    transform: scaleX(1);
+  }
+}
+
+/* Hero bottle: a barely-there scroll parallax (no JS). */
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-bottle {
+      animation: hero-drift linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 45vh;
+    }
+  }
+}
+@keyframes hero-drift {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-22px);
   }
 }
 

@@ -86,7 +86,7 @@ export function Header() {
                     href={item.href}
                     aria-current={active ? 'page' : undefined}
                     className={cn(
-                      'text-sm no-underline transition-colors duration-150',
+                      'link-underline text-sm no-underline transition-colors duration-150',
                       active ? 'text-ink' : 'text-slate hover:text-ink'
                     )}
                   >

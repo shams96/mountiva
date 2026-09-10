@@ -33,7 +33,7 @@ export function Footer() {
                   <li key={item.key}>
                     <Link
                       href={item.href}
-                      className="text-sm text-slate no-underline transition-colors hover:text-ink"
+                      className="text-sm text-slate link-underline no-underline transition-colors hover:text-ink"
                     >
                       {t(`nav.${item.key}`)}
                     </Link>
@@ -50,12 +50,12 @@ export function Footer() {
           </h2>
           <ul className="mt-4 space-y-2.5 text-sm text-slate">
             <li>
-              <a href={`mailto:${site.contact.email}`} className="no-underline hover:text-ink">
+              <a href={`mailto:${site.contact.email}`} className="link-underline no-underline hover:text-ink">
                 {site.contact.email}
               </a>
             </li>
             <li>
-              <a href={`tel:${site.contact.phoneHref}`} className="no-underline hover:text-ink">
+              <a href={`tel:${site.contact.phoneHref}`} className="link-underline no-underline hover:text-ink">
                 {site.contact.phoneDisplay}
               </a>
             </li>
@@ -68,7 +68,7 @@ export function Footer() {
               href={site.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate no-underline hover:text-ink"
+              className="link-underline text-slate no-underline hover:text-ink"
             >
               LinkedIn
             </a>
@@ -76,7 +76,7 @@ export function Footer() {
               href={site.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate no-underline hover:text-ink"
+              className="link-underline text-slate no-underline hover:text-ink"
             >
               Instagram
             </a>
@@ -93,10 +93,10 @@ export function Footer() {
             </span>
           </div>
           <div className="flex gap-5 text-xs text-ash">
-            <Link href="/privacy" className="no-underline hover:text-ink">
+            <Link href="/privacy" className="link-underline no-underline hover:text-ink">
               {t('footer.privacy')}
             </Link>
-            <Link href="/terms" className="no-underline hover:text-ink">
+            <Link href="/terms" className="link-underline no-underline hover:text-ink">
               {t('footer.terms')}
             </Link>
           </div>

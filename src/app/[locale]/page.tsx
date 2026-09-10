@@ -62,8 +62,8 @@ function Philosophy() {
         <SectionHeading eyebrow={t('eyebrow')} title={t('heading')} />
         <Reveal className="flex flex-col gap-6">
           <p className="text-lede leading-relaxed text-slate">{t('body')}</p>
-          <ButtonLink href="/story" variant="ghost" className="self-start px-0">
-            {t('cta')} →
+          <ButtonLink href="/story" variant="ghost" className="self-start px-0" withArrow>
+            {t('cta')}
           </ButtonLink>
         </Reveal>
       </div>
@@ -186,8 +186,8 @@ function InsightsPreview({ posts }: { posts: ReturnType<typeof getAllPosts> }) {
     <Section tone="mist">
       <div className="flex flex-wrap items-end justify-between gap-6">
         <SectionHeading eyebrow={t('eyebrow')} title={t('heading')} />
-        <ButtonLink href="/blog" variant="ghost" className="px-0">
-          {t('cta')} →
+        <ButtonLink href="/blog" variant="ghost" className="px-0" withArrow>
+          {t('cta')}
         </ButtonLink>
       </div>
       <div className="mt-10 grid gap-10 md:grid-cols-3">

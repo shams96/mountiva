@@ -26,8 +26,11 @@ export function Field({
   children: ReactNode;
 }) {
   return (
-    <div className="flex flex-col gap-1.5">
-      <label htmlFor={id} className="text-sm font-medium text-ink">
+    <div className="field flex flex-col gap-1.5">
+      <label
+        htmlFor={id}
+        className="text-sm font-medium text-slate transition-colors duration-150"
+      >
         {label}
         {optional && <span className="ms-1.5 text-xs font-normal text-ash">({optional})</span>}
       </label>

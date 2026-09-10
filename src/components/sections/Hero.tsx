@@ -61,7 +61,7 @@ export function Hero() {
         </div>
 
         <Reveal delay={0.1} className="justify-self-center">
-          <div className="relative">
+          <div className="hero-bottle relative">
             <div
               aria-hidden
               className="absolute -inset-8 rounded-full bg-white/70 blur-2xl"
