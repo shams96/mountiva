@@ -16,9 +16,9 @@ export const site = {
     // Phone is from the bottle label artwork; confirm the rest before publishing.
     email: 'wholesale@mountiva.com',
     generalEmail: 'hello@mountiva.com',
-    phoneDisplay: '+92 333 9980912',
-    phoneHref: '+923339980912',
-    whatsapp: '+92 333 9980912',
+    phoneDisplay: '+92 300 9592072',
+    phoneHref: '+923009592072',
+    whatsapp: '+92 300 9592072',
     addressLocality: 'Islamabad',
     addressRegion: 'Islamabad Capital Territory',
     addressCountry: 'PK'

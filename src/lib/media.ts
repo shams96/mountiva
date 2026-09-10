@@ -5,14 +5,10 @@
  * To use real photos: drop the files into /public/images with the names below,
  * then flip `enabled` to true for that slot. Nothing else to change.
  *
- * Expected assets (from the WhatsApp hand-off):
- *   - mountiva-hero.jpg    the styled bottle render (balcony / skyline shot),
- *                          ~1600×1600 or portrait, < 400 KB after compression
- *   - mountiva-bottle.jpg  a clean bottle-on-white cutout for the products blocks
- *   - og-default.jpg       1200×630 social share image
- *
- * The .cdr label file must be exported from Corel/Illustrator first — it is a
- * source document, not a web asset.
+ * Current asset: /images/mountiva.jpeg — a real product photo of the 330 ml and
+ * larger bottles. Used in the Products block. For the hero, a clean
+ * bottle-on-white studio shot (mountiva-hero.jpg) would work better than this
+ * shopfront photo; drop one in and set hero.enabled = true.
  */
 export const media = {
   /** The bottle in the hero — a render or a cutout. Shown over `heroBackground`. */
@@ -28,8 +24,8 @@ export const media = {
     alt: ''
   },
   bottle: {
-    enabled: false,
-    src: '/images/mountiva-bottle.jpg',
-    alt: 'Mountiva natural mineral water bottle'
+    enabled: true,
+    src: '/images/mountiva.jpeg',
+    alt: 'Mountiva mineral water — 330 ml and 1.5 litre bottles'
   }
 } as const;

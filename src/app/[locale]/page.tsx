@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 
 import { buildMetadata } from '@/lib/seo';
 import { media } from '@/lib/media';
+import { cn } from '@/lib/cn';
 import { getAllPosts } from '@/lib/blog';
 import { productSchema, faqSchema } from '@/lib/schema';
 import { JsonLd } from '@/components/seo/JsonLd';
@@ -100,14 +101,19 @@ function ProductsPreview() {
     <Section tone="mist">
       <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
         <Reveal>
-          <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-sm border border-stone bg-surface">
+          <div
+            className={cn(
+              'relative flex items-center justify-center overflow-hidden rounded-sm border border-stone bg-surface',
+              media.bottle.enabled ? 'aspect-[4/5] lg:aspect-square' : 'aspect-[4/3]'
+            )}
+          >
             {media.bottle.enabled ? (
               <Image
                 src={media.bottle.src}
                 alt={media.bottle.alt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 45vw"
-                className="object-cover"
+                className="object-cover object-[40%_38%]"
               />
             ) : (
               <MountainMotif className="h-16 w-auto text-stone" />
