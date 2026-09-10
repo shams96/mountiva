@@ -61,26 +61,26 @@ export function Hero() {
         </div>
 
         <Reveal delay={0.1} className="justify-self-center">
-          <div className="relative">
-            <div
-              aria-hidden
-              className="absolute -inset-8 rounded-full bg-white/70 blur-2xl"
-            />
-            {media.hero.enabled ? (
-              <div className="relative h-[420px] w-[300px] md:h-[520px] md:w-[380px]">
-                <Image
-                  src={media.hero.src}
-                  alt={media.hero.alt || t('imageAlt')}
-                  fill
-                  priority
-                  sizes="(max-width: 768px) 300px, 380px"
-                  className="object-contain"
-                />
-              </div>
-            ) : (
+          {media.hero.enabled ? (
+            <div className="relative h-[440px] w-[320px] overflow-hidden rounded-sm border border-stone bg-surface shadow-lift md:h-[560px] md:w-[420px]">
+              <Image
+                src={media.hero.src}
+                alt={media.hero.alt || t('imageAlt')}
+                fill
+                priority
+                sizes="(max-width: 768px) 320px, 420px"
+                className="object-cover object-[42%_40%]"
+              />
+            </div>
+          ) : (
+            <div className="relative">
+              <div
+                aria-hidden
+                className="absolute -inset-8 rounded-full bg-white/70 blur-2xl"
+              />
               <BottleMark className="relative h-[420px] w-auto md:h-[520px]" />
-            )}
-          </div>
+            </div>
+          )}
         </Reveal>
       </Container>
     </section>

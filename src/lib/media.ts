@@ -13,9 +13,9 @@
 export const media = {
   /** The bottle in the hero — a render or a cutout. Shown over `heroBackground`. */
   hero: {
-    enabled: false,
-    src: '/images/mountiva-hero.jpg',
-    alt: 'A Mountiva bottle'
+    enabled: true,
+    src: '/images/mountiva.jpeg',
+    alt: 'Mountiva mineral water bottles'
   },
   /** Optional Northern Pakistan landscape behind the hero bottle. */
   heroBackground: {
@@ -23,9 +23,11 @@ export const media = {
     src: '/images/mountiva-hero-bg.jpg',
     alt: ''
   },
+  /** Products block. Left off so the one photo isn't repeated on the home page;
+   *  point at a distinct product shot and flip on when one exists. */
   bottle: {
-    enabled: true,
-    src: '/images/mountiva.jpeg',
+    enabled: false,
+    src: '/images/mountiva-bottle.jpg',
     alt: 'Mountiva mineral water — 330 ml and 1.5 litre bottles'
   }
 } as const;
