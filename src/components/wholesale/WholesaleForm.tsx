@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { products } from '@/lib/products';
 import { businessTypes, wholesaleEnquirySchema } from '@/lib/wholesale-schema';
 import { site } from '@/lib/site';
+import { endpoints } from '@/lib/endpoints';
 import { cn } from '@/lib/cn';
 import { Field, fieldClasses } from '@/components/ui/Field';
 import { Button } from '@/components/ui/Button';
@@ -84,7 +85,7 @@ export function WholesaleForm() {
     setStatus('submitting');
     setErrors({});
     try {
-      const res = await fetch('/api/wholesale', {
+      const res = await fetch(endpoints.wholesale, {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(parsed.data)

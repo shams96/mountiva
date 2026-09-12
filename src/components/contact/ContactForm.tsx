@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { z } from 'zod';
 import { site } from '@/lib/site';
+import { endpoints } from '@/lib/endpoints';
 import { Field, fieldClasses } from '@/components/ui/Field';
 import { Button } from '@/components/ui/Button';
 
@@ -55,7 +56,7 @@ export function ContactForm() {
     setStatus('submitting');
     setErrors({});
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch(endpoints.contact, {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(parsed.data)

@@ -5,10 +5,16 @@ import { defineRouting } from 'next-intl/routing';
  * Arabic scaffolding is in place for GCC export enquiries; both ur and ar
  * render right-to-left (see `rtlLocales`).
  */
+// The Hostinger static-export build (scripts/build-static.mjs) has no
+// middleware to rewrite "/" -> "/en", so every locale — including English —
+// must be a real, always-prefixed folder there. The normal Node/Vercel build
+// keeps English unprefixed via middleware.
+const isStaticExport = process.env.NEXT_PUBLIC_STATIC_EXPORT === '1';
+
 export const routing = defineRouting({
   locales: ['en', 'ur', 'ar'],
   defaultLocale: 'en',
-  localePrefix: 'as-needed'
+  localePrefix: isStaticExport ? 'always' : 'as-needed'
 });
 
 export const rtlLocales = ['ur', 'ar'] as const;

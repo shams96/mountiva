@@ -8,6 +8,11 @@
 /out/
 next-env.d.ts
 
+# Hostinger static-export build (npm run build:static)
+/dist-static/
+/.static-backup/
+mountiva-static-hostinger.zip
+
 # production
 /build
 
