@@ -103,7 +103,7 @@ function ProductsPreview() {
         <Reveal>
           <div
             className={cn(
-              'relative flex items-center justify-center overflow-hidden rounded-sm border border-stone bg-surface',
+              'group relative flex items-center justify-center overflow-hidden rounded-sm border border-stone bg-surface',
               media.bottle.enabled ? 'aspect-[4/5] lg:aspect-square' : 'aspect-[4/3]'
             )}
           >
@@ -114,7 +114,7 @@ function ProductsPreview() {
                   alt={media.bottle.alt}
                   fill
                   sizes="(max-width: 1024px) 100vw, 45vw"
-                  className="object-contain"
+                  className="object-contain transition-transform duration-500 ease-calm group-hover:scale-[1.03]"
                 />
               </div>
             ) : (

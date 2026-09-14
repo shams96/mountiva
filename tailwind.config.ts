@@ -83,7 +83,11 @@ const config: Config = {
         eyebrow: '0.22em'
       },
       spacing: {
-        section: 'clamp(4.5rem, 9vw, 8.5rem)'
+        // Applied as py- (top AND bottom) on every Section, so two adjacent
+        // sections stack to roughly double this value at the seam between
+        // them — keep it tight enough that the total doesn't read as a dead
+        // zone, generous enough that dense content still breathes.
+        section: 'clamp(3.5rem, 6vw, 6rem)'
       },
       maxWidth: {
         prose: '68ch',

@@ -12,9 +12,12 @@ type SectionProps = {
 };
 
 const toneMap: Record<NonNullable<SectionProps['tone']>, string> = {
-  paper: 'bg-paper text-ink',
-  surface: 'bg-surface text-ink',
-  mist: 'bg-mist text-ink',
+  // Light tones get a bottom border — the seam between two stacked
+  // sections' padding should read as a deliberate break, not an
+  // ambiguous gap the eye has to guess at from a faint color shift alone.
+  paper: 'bg-paper text-ink border-b border-stone/60',
+  surface: 'bg-surface text-ink border-b border-stone/60',
+  mist: 'bg-mist text-ink border-b border-stone/60',
   ink: 'bg-ink text-paper',
   night: 'bg-night text-paper'
 };

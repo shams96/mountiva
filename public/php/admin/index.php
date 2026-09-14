@@ -23,6 +23,7 @@ if (!$pdo) {
 
 // Status updates (both tables share the same form action).
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'update_status') {
+    admin_csrf_verify();
     $isContact = ($_POST['table'] ?? '') === 'contact';
     $table = $isContact ? 'contact_messages' : 'wholesale_enquiries';
     $allowed = $isContact ? ['new', 'read', 'replied'] : ['new', 'contacted', 'won', 'lost'];
@@ -41,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'updat
 // password is shown exactly once (session flash) — relay it to the customer
 // yourself (call/WhatsApp/email); it's not stored anywhere after this.
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'create_account') {
+    admin_csrf_verify();
     $enquiryId = (int) ($_POST['id'] ?? 0);
     $result = $enquiryId > 0 ? db_provision_customer_from_enquiry($enquiryId) : ['ok' => false, 'error' => 'bad_request'];
     $_SESSION['flash_account'] = $result;
@@ -189,6 +191,7 @@ $contactNewCount = count(array_filter($contacts, fn($r) => $r['status'] === 'new
                     <span class="account-linked">✓ Linked</span>
                   <?php else: ?>
                     <form method="post">
+                      <input type="hidden" name="csrf" value="<?= h(admin_csrf_token()) ?>">
                       <input type="hidden" name="action" value="create_account">
                       <input type="hidden" name="id" value="<?= (int) $r['id'] ?>">
                       <button type="submit" class="link-btn">Create account</button>
@@ -197,6 +200,7 @@ $contactNewCount = count(array_filter($contacts, fn($r) => $r['status'] === 'new
                 </td>
                 <td>
                   <form method="post">
+                    <input type="hidden" name="csrf" value="<?= h(admin_csrf_token()) ?>">
                     <input type="hidden" name="action" value="update_status">
                     <input type="hidden" name="table" value="wholesale">
                     <input type="hidden" name="id" value="<?= (int) $r['id'] ?>">
@@ -232,6 +236,7 @@ $contactNewCount = count(array_filter($contacts, fn($r) => $r['status'] === 'new
                 <td class="message"><?= h($r['message']) ?></td>
                 <td>
                   <form method="post">
+                    <input type="hidden" name="csrf" value="<?= h(admin_csrf_token()) ?>">
                     <input type="hidden" name="action" value="update_status">
                     <input type="hidden" name="table" value="contact">
                     <input type="hidden" name="id" value="<?= (int) $r['id'] ?>">

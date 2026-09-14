@@ -6,6 +6,9 @@
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  # Hostinger issues free SSL by default; safe once the domain only ever
+  # serves over HTTPS. Remove this line if you ever need to serve plain HTTP.
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 </IfModule>
 
 # Next.js exports every route as a directory + index.html (trailingSlash),

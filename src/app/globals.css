@@ -311,14 +311,6 @@
   }
 }
 
-/* Data saver: drop the decorative gradient washes and any background media. */
-@media (prefers-reduced-data: reduce) {
-  [data-hero-bg],
-  .hero-wash {
-    display: none !important;
-  }
-}
-
 /* Smooth cross-document navigation where the browser supports it (no JS). */
 @view-transition {
   navigation: auto;

@@ -85,7 +85,7 @@ function WholesaleContent() {
 
       <Section tone="paper" id="request">
         <SectionHeading title={t('formHeading')} body={t('formIntro')} />
-        <div className="mt-10 max-w-3xl rounded-sm border border-stone bg-surface p-6 shadow-card md:p-9">
+        <div className="mt-10 max-w-3xl rounded-sm border border-stone bg-surface p-6 md:p-9">
           <WholesaleForm />
         </div>
       </Section>

@@ -9,6 +9,7 @@ $error = '';
 $success = false;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    customer_csrf_verify();
     $current = (string) ($_POST['current_password'] ?? '');
     $new = (string) ($_POST['new_password'] ?? '');
     $confirm = (string) ($_POST['confirm_password'] ?? '');
@@ -80,6 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <p><a href="index.php">Back to your enquiries →</a></p>
     <?php else: ?>
       <form method="post" autocomplete="off">
+        <input type="hidden" name="csrf" value="<?= h(customer_csrf_token()) ?>">
         <label for="current_password">Current password</label>
         <input id="current_password" name="current_password" type="password" required>
         <label for="new_password">New password</label>

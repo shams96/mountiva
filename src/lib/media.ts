@@ -28,12 +28,6 @@ export const media = {
     src: '/images/mountiva_mineral_water.jpg',
     alt: 'Mountiva mineral water bottle and can against the snow-capped peaks of Northern Pakistan'
   },
-  /** Optional Northern Pakistan landscape behind the hero bottle. */
-  heroBackground: {
-    enabled: false,
-    src: '/images/mountiva-hero-bg.jpg',
-    alt: ''
-  },
   /** Products block. */
   bottle: {
     enabled: true,

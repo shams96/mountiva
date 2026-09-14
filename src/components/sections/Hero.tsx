@@ -11,14 +11,7 @@ export function Hero() {
   const t = useTranslations('home.hero');
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-glacier-pale via-northern-pale/50 to-paper">
-      {/* Restrained droplet wash — echoes the water motif without a literal splash graphic */}
-      <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-28 right-[6%] h-80 w-80 rounded-full bg-glacier/20 blur-3xl" />
-        <div className="absolute top-1/3 -right-10 h-56 w-56 rounded-full bg-northern/15 blur-3xl" />
-        <div className="absolute bottom-[-4rem] left-[18%] h-48 w-48 rounded-full bg-glacier-pale blur-2xl" />
-      </div>
-
+    <section className="relative overflow-hidden border-b border-stone bg-paper">
       <Container className="relative grid items-center gap-14 py-16 md:py-24 lg:grid-cols-[1fr_1.05fr] lg:gap-10 lg:py-28">
         <div className="max-w-xl">
           <Reveal>
@@ -47,7 +40,7 @@ export function Hero() {
         </div>
 
         <Reveal delay={0.1}>
-          <div className="relative mx-auto aspect-[4/3] w-full max-w-2xl overflow-hidden rounded-sm shadow-lift md:aspect-[16/10]">
+          <div className="group relative mx-auto aspect-[4/3] w-full max-w-2xl overflow-hidden rounded-sm border border-stone md:aspect-[16/10]">
             {media.hero.enabled ? (
               <Image
                 src={media.hero.src}
@@ -55,7 +48,7 @@ export function Hero() {
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 55vw"
-                className="object-cover"
+                className="object-cover transition-transform duration-500 ease-calm group-hover:scale-[1.03]"
               />
             ) : (
               <div className="flex h-full items-center justify-center bg-surface">

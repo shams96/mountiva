@@ -85,7 +85,7 @@ function ContactContent() {
             />
           </div>
 
-          <div className="rounded-sm border border-stone bg-surface p-6 shadow-card md:p-9">
+          <div className="rounded-sm border border-stone bg-surface p-6 md:p-9">
             <ContactForm />
           </div>
         </div>

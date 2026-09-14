@@ -19,10 +19,6 @@ type PageHeroProps = {
 export function PageHero({ eyebrow, heading, lede, meta, children, motif = true }: PageHeroProps) {
   return (
     <section className={cn('relative overflow-hidden border-b border-stone bg-paper')}>
-      <div
-        aria-hidden
-        className="hero-wash pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-glacier-pale/60 to-transparent"
-      />
       <Container className="relative py-16 md:py-24 lg:py-28">
         <Reveal className="max-w-3xl">
           <Eyebrow>{eyebrow}</Eyebrow>
