@@ -6,6 +6,6 @@
   Require all denied
 </FilesMatch>
 
-<Files "schema.sql">
+<FilesMatch "\.sql$">
   Require all denied
-</Files>
+</FilesMatch>

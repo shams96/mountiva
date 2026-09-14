@@ -5,7 +5,9 @@ emailed — the PHP form handlers (`public/php/wholesale.php`,
 `public/php/contact.php`) write to the database *and* send the notification
 email; either succeeding is enough, so a bounced email no longer means a
 lost lead. A small admin page at `/php/admin/` lists everything and lets you
-mark status.
+mark status. From there you can also turn a wholesale enquiry into a
+customer portal account, so the customer can log in and see their own
+enquiry history at `/php/portal/`.
 
 This only applies to the Hostinger static-export deploy path (see
 `docs/../scripts/build-static.mjs`) — the Next.js API routes under
@@ -18,8 +20,11 @@ This only applies to the Hostinger static-export deploy path (see
    and host (usually `localhost`).
 2. **Create the tables.** phpMyAdmin (linked from the same hPanel page) →
    select your database → SQL tab → paste the contents of
-   `public/php/schema.sql` → Go. Creates `wholesale_enquiries` and
-   `contact_messages`.
+   `public/php/schema.sql` → Go. Creates `wholesale_enquiries`,
+   `contact_messages`, and `customers` (portal accounts). If you already ran
+   an older `schema.sql` on a live database before the customer portal
+   existed, run `public/php/migration-customer-portal.sql` once instead —
+   it only adds what's missing.
 3. **Set an admin password.** Locally:
    ```bash
    php -r "echo password_hash('your-chosen-password', PASSWORD_DEFAULT), PHP_EOL;"
@@ -47,13 +52,41 @@ This only applies to the Hostinger static-export deploy path (see
   contact).
 - "Log out" ends the session.
 
+## Customer portal
+
+There is no public signup — accounts are only created by you, from the
+**Wholesale enquiries** tab:
+
+1. Find the enquiry for the customer you want to give portal access to,
+   click **Create account** in the Account column.
+2. A banner shows a one-time temporary password (10 random hex characters).
+   It is never stored anywhere and never shown again — copy it now and send
+   it to the customer yourself (call, WhatsApp, email — whatever you'd
+   normally use).
+3. The customer signs in at `/php/portal/login.php` with their enquiry
+   email and that password. First login forces them to set their own
+   password before they can see anything else.
+4. Once set, they see every wholesale enquiry linked to their account —
+   including new ones submitted later from the same email address, which
+   link automatically (no need to click "Create account" again).
+
+If a customer's enquiry email already has an account, "Create account" just
+links the enquiry to it instead of creating a duplicate — safe to click
+more than once.
+
 ## Notes
 
 - `public/php/.htaccess` blocks direct HTTP access to the `_*.php` helper
-  files and `schema.sql` — they're only ever `require`d server-side.
+  files and any `.sql` file — they're only ever `require`d server-side.
 - If `_config.php` is missing or the DB credentials are wrong, the forms
   silently fall back to email-only (unchanged from before) and the admin
   page shows a clear "database not connected" message instead of erroring.
 - The admin password is a single shared secret (no per-user accounts) — fine
   for one or two people checking enquiries. If more people need access with
   separate logins later, that's a bigger change (a real users table).
+- Admin and customer-portal sessions use different cookie names
+  (`PHPSESSID` vs `mtva_customer`), so being signed into one doesn't affect
+  the other, even in the same browser.
+- The whole DB + admin + portal stack was verified end-to-end against real
+  MySQL + PHP (disposable Docker containers, real `schema.sql` and PHP
+  files, no mocking) before this shipped.

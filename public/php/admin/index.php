@@ -37,6 +37,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'updat
     exit;
 }
 
+// Provision a portal login for a wholesale enquiry's contact. The generated
+// password is shown exactly once (session flash) — relay it to the customer
+// yourself (call/WhatsApp/email); it's not stored anywhere after this.
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'create_account') {
+    $enquiryId = (int) ($_POST['id'] ?? 0);
+    $result = $enquiryId > 0 ? db_provision_customer_from_enquiry($enquiryId) : ['ok' => false, 'error' => 'bad_request'];
+    $_SESSION['flash_account'] = $result;
+    header('Location: index.php?tab=wholesale');
+    exit;
+}
+
+$flashAccount = $_SESSION['flash_account'] ?? null;
+unset($_SESSION['flash_account']);
+
 $tab = ($_GET['tab'] ?? 'wholesale') === 'contact' ? 'contact' : 'wholesale';
 
 $wholesale = $pdo->query('SELECT * FROM wholesale_enquiries ORDER BY created_at DESC LIMIT 300')->fetchAll();
@@ -95,6 +109,20 @@ $contactNewCount = count(array_filter($contacts, fn($r) => $r['status'] === 'new
   .status-lost { color: #94978F; }
   a.mailto { color: #245A6B; text-decoration: none; }
   a.mailto:hover { text-decoration: underline; }
+  .flash {
+    margin-bottom: 1.25rem; padding: 0.9rem 1.1rem; border-radius: 4px; font-size: 0.85rem;
+  }
+  .flash-ok { background: #E0EEEC; border: 1px solid rgba(60,140,139,0.35); color: #1c4a49; }
+  .flash-error { background: #FBE7E5; border: 1px solid rgba(212,46,36,0.3); color: #7a1410; }
+  .flash code {
+    background: rgba(0,0,0,0.06); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85em;
+  }
+  button.link-btn {
+    background: none; border: none; padding: 0; color: #245A6B; font-size: 0.8rem;
+    text-decoration: underline; cursor: pointer; font-family: inherit;
+  }
+  button.link-btn:hover { color: #15181A; }
+  .account-linked { color: #94978F; font-size: 0.78rem; }
 </style>
 </head>
 <body>
@@ -113,6 +141,21 @@ $contactNewCount = count(array_filter($contacts, fn($r) => $r['status'] === 'new
   </nav>
 
   <?php if ($tab === 'wholesale'): ?>
+    <?php if ($flashAccount): ?>
+      <?php if (!empty($flashAccount['ok']) && !empty($flashAccount['temporaryPassword'])): ?>
+        <div class="flash flash-ok">
+          Portal account created. Temporary password (shown once —
+          relay it to the customer yourself, it is not stored anywhere):
+          <code><?= h($flashAccount['temporaryPassword']) ?></code>.
+          Portal: <code>/php/portal/login.php</code>. They'll be asked to set
+          their own password on first login.
+        </div>
+      <?php elseif (!empty($flashAccount['ok']) && !empty($flashAccount['alreadyExisted'])): ?>
+        <div class="flash flash-ok">This enquiry is already linked to a portal account.</div>
+      <?php else: ?>
+        <div class="flash flash-error">Could not create the account — check the database connection and try again.</div>
+      <?php endif; ?>
+    <?php endif; ?>
     <div class="table-wrap">
       <?php if (!$wholesale): ?>
         <p class="empty">No wholesale enquiries yet.</p>
@@ -122,7 +165,7 @@ $contactNewCount = count(array_filter($contacts, fn($r) => $r['status'] === 'new
             <tr>
               <th>Received</th><th>Company</th><th>Contact</th><th>Phone</th>
               <th>Location</th><th>Type</th><th>Formats</th><th>Vol./mo</th>
-              <th>Label</th><th>Message</th><th>Status</th>
+              <th>Label</th><th>Message</th><th>Account</th><th>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -141,6 +184,17 @@ $contactNewCount = count(array_filter($contacts, fn($r) => $r['status'] === 'new
                 <td><?= h(number_format((float) $r['monthly_volume'])) ?></td>
                 <td><?= $r['private_label'] ? 'Yes' : '—' ?></td>
                 <td class="message"><?= h($r['message']) ?></td>
+                <td>
+                  <?php if (!empty($r['customer_id'])): ?>
+                    <span class="account-linked">✓ Linked</span>
+                  <?php else: ?>
+                    <form method="post">
+                      <input type="hidden" name="action" value="create_account">
+                      <input type="hidden" name="id" value="<?= (int) $r['id'] ?>">
+                      <button type="submit" class="link-btn">Create account</button>
+                    </form>
+                  <?php endif; ?>
+                </td>
                 <td>
                   <form method="post">
                     <input type="hidden" name="action" value="update_status">
