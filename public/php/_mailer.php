@@ -95,5 +95,11 @@ function send_mail(string $to, string $subject, string $body, string $replyToEma
         'MIME-Version: 1.0'
     ];
 
-    return mail($to, clean_header_value($subject), $body, implode("\r\n", $headers));
+    // The 5th param (-f) sets the envelope sender (Return-Path). Without it,
+    // Hostinger's mail() defaults to its own server address (e.g.
+    // noreply@srvNNN.main-hosting.eu), which mismatches the visible From
+    // domain and fails SPF — that's what was landing these in spam.
+    $envelopeFrom = '-f' . FROM_ADDRESS;
+
+    return mail($to, clean_header_value($subject), $body, implode("\r\n", $headers), $envelopeFrom);
 }
