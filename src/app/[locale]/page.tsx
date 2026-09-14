@@ -108,13 +108,15 @@ function ProductsPreview() {
             )}
           >
             {media.bottle.enabled ? (
-              <Image
-                src={media.bottle.src}
-                alt={media.bottle.alt}
-                fill
-                sizes="(max-width: 1024px) 100vw, 45vw"
-                className="object-cover object-[40%_38%]"
-              />
+              <div className="absolute inset-0 p-8">
+                <Image
+                  src={media.bottle.src}
+                  alt={media.bottle.alt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                  className="object-contain"
+                />
+              </div>
             ) : (
               <MountainMotif className="h-16 w-auto text-stone" />
             )}

@@ -186,7 +186,7 @@ hours: Mon–Sat 9:00–18:00 PKT). Message form → `POST /api/contact`.
 
 ## Placeholders to replace before launch
 
-`src/lib/site.ts`: email `wholesale@mountiva.com`, general `hello@mountiva.com`, phone
+`src/lib/site.ts`: email `wholesale@mountivawater.com`, general `hello@mountivawater.com`, phone
 `+92 51 000 0000`, WhatsApp `+92 300 000 0000`, Islamabad address, LinkedIn/Instagram URLs,
 `NEXT_PUBLIC_SITE_URL`. Product specs in `src/lib/products.ts`. Lab report PDFs +
 `reports[]` in `quality/page.tsx`. Imagery in `public/images/`.

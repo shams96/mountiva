@@ -11,29 +11,15 @@ export function Hero() {
   const t = useTranslations('home.hero');
 
   return (
-    <section className="relative overflow-hidden bg-paper">
-      {media.heroBackground.enabled ? (
-        <>
-          <Image
-            data-hero-bg
-            src={media.heroBackground.src}
-            alt={media.heroBackground.alt}
-            fill
-            priority
-            sizes="100vw"
-            className="pointer-events-none object-cover"
-          />
-          <div aria-hidden className="absolute inset-0 bg-paper/70" />
-        </>
-      ) : (
-        /* Soft Northern horizon wash — stands in for a landscape until one is set */
-        <div
-          aria-hidden
-          className="hero-wash pointer-events-none absolute inset-x-0 top-0 h-[60%] bg-gradient-to-b from-glacier-pale/70 via-northern-pale/30 to-transparent"
-        />
-      )}
+    <section className="relative overflow-hidden bg-gradient-to-br from-glacier-pale via-northern-pale/50 to-paper">
+      {/* Restrained droplet wash — echoes the water motif without a literal splash graphic */}
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-28 right-[6%] h-80 w-80 rounded-full bg-glacier/20 blur-3xl" />
+        <div className="absolute top-1/3 -right-10 h-56 w-56 rounded-full bg-northern/15 blur-3xl" />
+        <div className="absolute bottom-[-4rem] left-[18%] h-48 w-48 rounded-full bg-glacier-pale blur-2xl" />
+      </div>
 
-      <Container className="relative grid items-center gap-12 py-16 md:py-24 lg:grid-cols-[1.1fr_0.9fr] lg:gap-8 lg:py-28">
+      <Container className="relative grid items-center gap-14 py-16 md:py-24 lg:grid-cols-[1fr_1.05fr] lg:gap-10 lg:py-28">
         <div className="max-w-xl">
           <Reveal>
             <Eyebrow>{t('eyebrow')}</Eyebrow>
@@ -60,24 +46,21 @@ export function Hero() {
           </Reveal>
         </div>
 
-        <Reveal delay={0.1} className="justify-self-center">
-          <div className="hero-bottle relative">
-            <div
-              aria-hidden
-              className="absolute -inset-8 rounded-full bg-white/70 blur-2xl"
-            />
+        <Reveal delay={0.1}>
+          <div className="relative mx-auto aspect-[4/3] w-full max-w-2xl overflow-hidden rounded-sm shadow-lift md:aspect-[16/10]">
             {media.hero.enabled ? (
               <Image
                 src={media.hero.src}
                 alt={media.hero.alt || t('imageAlt')}
-                width={1024}
-                height={1180}
+                fill
                 priority
-                sizes="(max-width: 768px) 320px, 486px"
-                className="relative h-[440px] w-auto md:h-[560px]"
+                sizes="(max-width: 1024px) 100vw, 55vw"
+                className="object-cover"
               />
             ) : (
-              <BottleMark className="relative h-[420px] w-auto md:h-[520px]" />
+              <div className="flex h-full items-center justify-center bg-surface">
+                <BottleMark className="h-64 w-auto" />
+              </div>
             )}
           </div>
         </Reveal>

@@ -10,9 +10,9 @@
  */
 
 const SITE_NAME = 'Mountiva';
-const FROM_ADDRESS = 'no-reply@mountiva.com'; // must be a mailbox on your own domain
-const WHOLESALE_TO = 'wholesale@mountiva.com';
-const GENERAL_TO = 'hello@mountiva.com';
+const FROM_ADDRESS = 'no-reply@mountivawater.com'; // must be a mailbox on your own domain
+const WHOLESALE_TO = 'wholesale@mountivawater.com';
+const GENERAL_TO = 'hello@mountivawater.com';
 
 header('Content-Type: application/json; charset=utf-8');
 // Same-origin form posts only; adjust if the site is ever served from a

@@ -53,7 +53,7 @@ function writeRootRedirect() {
 <title>Mountiva</title>
 </head>
 <body>
-<p>Redirecting to <a href="/en/">mountiva.com/en/</a>&hellip;</p>
+<p>Redirecting to <a href="/en/">mountivawater.com/en/</a>&hellip;</p>
 <script>location.replace('/en/');</script>
 </body>
 </html>

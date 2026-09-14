@@ -10,12 +10,12 @@ export const site = {
     'Premium wholesale natural mineral water drawn from the deep aquifers of Northern Pakistan.',
   descriptionLong:
     'Mountiva is a wholesale-first premium natural mineral water brand from Northern Pakistan. We do not sell mountain fairy tales from Europe — we draw water from the same land that taught the world how to live with water 5,000 years ago. Bottled with modern standards and an ancient sense of duty.',
-  url: process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') || 'https://mountiva.com',
+  url: process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') || 'https://mountivawater.com',
   locale: 'en_PK',
   contact: {
     // Phone is from the bottle label artwork; confirm the rest before publishing.
-    email: 'wholesale@mountiva.com',
-    generalEmail: 'hello@mountiva.com',
+    email: 'wholesale@mountivawater.com',
+    generalEmail: 'hello@mountivawater.com',
     phoneDisplay: '+92 300 9592072',
     phoneHref: '+923009592072',
     whatsapp: '+92 300 9592072',
