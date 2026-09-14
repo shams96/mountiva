@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/_mailer.php';
+require __DIR__ . '/_db.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     json_fail(405, 'method_not_allowed');
@@ -37,6 +38,21 @@ if (!$consent) {
 
 $formatsList = implode(', ', array_map('strval', $formats));
 
+$stored = db_insert_wholesale_enquiry([
+    'name' => $name,
+    'company' => $company,
+    'role' => $role,
+    'email' => $email,
+    'phone' => $phone,
+    'country' => $country,
+    'city' => $city,
+    'businessType' => $businessType,
+    'formats' => $formatsList,
+    'monthlyVolume' => $monthlyVolume,
+    'privateLabel' => $privateLabel,
+    'message' => $message
+]);
+
 $body = <<<TXT
 New wholesale enquiry — Mountiva
 
@@ -60,9 +76,13 @@ TXT;
 
 $sent = send_mail(WHOLESALE_TO, "Wholesale enquiry: {$company}", $body, $email, $name);
 
-if (!$sent) {
-    error_log('[mountiva] wholesale.php mail() failed for ' . $email);
+if (!$stored && !$sent) {
+    error_log('[mountiva] wholesale.php: DB insert and mail() both failed for ' . $email);
     json_fail(502, 'send_failed');
+}
+
+if (!$sent) {
+    error_log('[mountiva] wholesale.php mail() failed for ' . $email . ' (stored in DB)');
 }
 
 json_ok();

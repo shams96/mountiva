@@ -50,6 +50,11 @@ export function Footer() {
           </h2>
           <ul className="mt-4 space-y-2.5 text-sm text-slate">
             <li>
+              <a href={`mailto:${site.contact.generalEmail}`} className="link-underline no-underline hover:text-ink">
+                {site.contact.generalEmail}
+              </a>
+            </li>
+            <li>
               <a href={`mailto:${site.contact.email}`} className="link-underline no-underline hover:text-ink">
                 {site.contact.email}
               </a>

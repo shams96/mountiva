@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/_mailer.php';
+require __DIR__ . '/_db.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     json_fail(405, 'method_not_allowed');
@@ -24,6 +25,13 @@ if (!$consent) {
     json_fail(422, 'validation', ['field' => 'consent']);
 }
 
+$stored = db_insert_contact_message([
+    'name' => $name,
+    'email' => $email,
+    'company' => $company,
+    'message' => $message
+]);
+
 $body = <<<TXT
 New contact message — Mountiva
 
@@ -37,9 +45,13 @@ TXT;
 
 $sent = send_mail(GENERAL_TO, "Contact message from {$name}", $body, $email, $name);
 
-if (!$sent) {
-    error_log('[mountiva] contact.php mail() failed for ' . $email);
+if (!$stored && !$sent) {
+    error_log('[mountiva] contact.php: DB insert and mail() both failed for ' . $email);
     json_fail(502, 'send_failed');
+}
+
+if (!$sent) {
+    error_log('[mountiva] contact.php mail() failed for ' . $email . ' (stored in DB)');
 }
 
 json_ok();

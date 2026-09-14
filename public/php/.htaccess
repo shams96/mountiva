@@ -1,0 +1,11 @@
+# Block direct access to internal helpers and the schema file — they should
+# only ever be `require`d by wholesale.php / contact.php / admin/*, never
+# requested directly over HTTP. Works on both Apache 2.4+ and LiteSpeed
+# (Hostinger's default), which both support mod_authz_core syntax.
+<FilesMatch "^_.*\.php$">
+  Require all denied
+</FilesMatch>
+
+<Files "schema.sql">
+  Require all denied
+</Files>

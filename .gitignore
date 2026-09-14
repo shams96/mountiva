@@ -30,6 +30,10 @@ yarn-error.log*
 .env
 .env*.local
 
+# Hostinger PHP secrets (DB credentials, admin password hash) — copy from
+# public/php/_config.example.php and fill in on each machine / on the server
+public/php/_config.php
+
 # vercel
 .vercel
 
