@@ -10,9 +10,12 @@
  */
 
 const SITE_NAME = 'Mountiva';
-const FROM_ADDRESS = 'no-reply@mountivawater.com'; // must be a mailbox on your own domain
 const WHOLESALE_TO = 'wholesale@mountivawater.com';
 const GENERAL_TO = 'hello@mountivawater.com';
+// Just two real mailboxes on the domain (wholesale@ and hello@) — reuse the
+// general one as the technical "From" sender address instead of requiring a
+// third mailbox that's never shown to anyone.
+const FROM_ADDRESS = GENERAL_TO;
 
 header('Content-Type: application/json; charset=utf-8');
 // Same-origin form posts only; adjust if the site is ever served from a

@@ -14,7 +14,7 @@
  *
  * Usage: npm run build:static
  */
-import { existsSync, mkdirSync, renameSync, rmSync, writeFileSync, cpSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, renameSync, rmSync, writeFileSync, cpSync } from 'node:fs';
 import { execFileSync, execSync } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -95,6 +95,19 @@ writeRootRedirect();
 rmSync(distDir, { recursive: true, force: true });
 cpSync(outDir, distDir, { recursive: true });
 rmSync(outDir, { recursive: true, force: true });
+
+// Windows/PowerShell occasionally leaves a stray empty "<name>;C" sibling
+// directory alongside a copied folder during this build (observed for
+// "php;C" next to "php") — harmless (always empty) but untidy in the zip.
+for (const entry of readdirSync(distDir, { withFileTypes: true })) {
+  if (entry.isDirectory() && entry.name.includes(';')) {
+    const strayPath = path.join(distDir, entry.name);
+    if (readdirSync(strayPath).length === 0) {
+      rmSync(strayPath, { recursive: true, force: true });
+      console.log(`[build-static] removed stray empty directory: ${entry.name}`);
+    }
+  }
+}
 
 console.log(`[build-static] static site ready at ${path.relative(root, distDir)}/`);
 
